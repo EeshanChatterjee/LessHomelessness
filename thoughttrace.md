@@ -724,3 +724,32 @@ site/
 - All pages share identical navbar and footer markup; active link detection via main.js
 - Stabilization tier (Phase 2.5b) visually distinguished with gold border/badge throughout
 
+
+---
+
+## Entry 12 — Session: Sidebar, PDF, README cleanup
+
+**Date:** 2026-06-07
+
+**Prompts:**
+- "remove the Site section from the actual Site. Also add a sidenavbar to allow navigation to other pages like problem, solution etc. Also create a download full PRD option on the landing page - that downloads the entire PRD as a PDF. This PDF can be hosted within the repo itself"
+
+**Changes made:**
+
+1. **Sidebar injection (all 8 pages)** — `docs/assets/js/main.js` rewritten to inject sidebar HTML via `insertAdjacentHTML('afterbegin', ...)` on DOMContentLoaded. Sidebar includes: brand logo, nav links to all 8 pages with emoji icons, grouped labels (Overview / The Case / People & Risk / Take Action), Downloads section with PDF + XLSX links. Active page highlighted via `data-page` matching. Mobile: sidebar hidden off-screen via CSS transform, floating ☰ button toggles it. `body.has-sidebar` class shifts layout by 224px on desktop.
+
+2. **Sidebar CSS** — Full block added to `docs/assets/css/style.css` before `.navbar` section. Key rules: fixed positioning, `z-index: 200`, `overflow-y: auto`, responsive collapse at 960px breakpoint.
+
+3. **PDF generation** — `houston-discovery-and-prd.md` converted to PDF via pandoc + xelatex: `pandoc houston-discovery-and-prd.md -o HomeGuarantee_PRD_v1.6.pdf --pdf-engine=xelatex -V geometry:margin=1.2in -V fontsize=11pt -V mainfont="DejaVu Serif" --toc --toc-depth=2`. Output: 196K file. Copied to `docs/assets/HomeGuarantee_PRD_v1.6.pdf`.
+
+4. **Download button on landing page** — Added third CTA button to `docs/index.html` hero `__actions` div: `<a href="assets/HomeGuarantee_PRD_v1.6.pdf" class="btn btn-outline" download>Download Full PRD (PDF) ↓</a>`
+
+5. **README cleanup** — Removed `## Site (GitHub Pages)` section (page table + publish instructions) from `README.md`. Section was internal scaffolding, not useful in the public repo context.
+
+6. **GitHub Pages 404 fix** — User renamed `site/` → `docs/` and configured Pages to deploy from `/docs`. All subsequent file paths use `docs/`.
+
+**Key technical decisions:**
+- Sidebar injected via JS (not duplicated HTML) so edits stay in one file
+- PDF hosted in repo at `docs/assets/` so it downloads without any external dependency
+- `site/` reference in README `## Repository contents` code block kept (reflects actual non-docs files); only the GitHub Pages how-to section removed
+

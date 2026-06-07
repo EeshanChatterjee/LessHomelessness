@@ -14,26 +14,6 @@ HomeGuarantee fixes the trust gap with a financial guarantee product — and the
 
 ---
 
-## Site (GitHub Pages)
-
-The full investment and partnership case is presented as a public website in the `site/` directory.
-
-**Pages:**
-
-| Page | Content |
-|------|---------|
-| `index.html` | Landing — market overview, how it works, CTA |
-| `problem.html` | 6 barriers, the broken voucher math, true system costs |
-| `solution.html` | 4 platform components, Stabilization tier, 6-phase rollout |
-| `model.html` | 5 revenue tiers, Works program, fund governance |
-| `financials.html` | Year 0–5 P&L, Chart.js projections, unit economics |
-| `personas.html` | 6 stakeholder personas with JTBD and north star metrics |
-| `risk.html` | 10 kill switches, structural tensions, red-team findings |
-| `invest.html` | Dual-audience: investors + CoC/policy partners |
-
-**To publish:** push `site/` contents to a GitHub repo root → Settings → Pages → Deploy from branch → main.
-
----
 
 ## Repository contents
 
