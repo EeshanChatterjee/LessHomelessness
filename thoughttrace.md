@@ -614,3 +614,113 @@ Red-teamed the below-FMR expansion from `discovery-works-expansion.md`. Five kil
 File saved: `red-team-below-fmr.md`
 
 ---
+
+---
+
+## Entry 10 — June 7, 2026
+
+### Prompt
+[Sessions 3–4 continuation] "Rewrite the PRD to prioritize the below-FMR Stabilization tier as a viable strategy. Update the personas, financial projections and the opportunity solution trees as well." — then "continue" and "Continue from where you left off."
+
+### Response Summary
+
+**Three deliverables completed across Sessions 3–4:**
+
+#### 1. PRD v1.5 → v1.6 (`houston-discovery-and-prd.md`)
+Full rewrite to center Phase 2.5b (below-FMR Stabilization Tier). Key additions:
+- Section 1: 6th barrier added — "Supply gap: substandard and abandoned units locked out by renovation cost"
+- Section 3: Persona 6 (Ray) added to stakeholder table; Tension Map gained 2 rows (income vs. stability; renovation depth vs. labor ceiling)
+- Section 4: Non-goal clarified (no acquisition; renovation-for-commitment exchange); supply-side goal added (50 units by M18–24)
+- Section 5: 4th component added — "Supply Expansion Layer" (Works Renovation Exchange, Stabilization sub-tier $200–350/mo, Below-FMR Voucher sub-tier $350–FMR, HCAD outreach, Solar PPA)
+- Section 6: Full Phase 2.5b feature spec — two-tier regulatory table, owner outreach channels, Works renovation economics table (active carrier: $38,800 / 2,305 hrs vs. delinquent: $14,400 / 856 hrs), Works-SSI structural constraint design rule (no co-location)
+- Section 7: Stabilization claims rate target ≤15%; Works renovation and unit targets
+- Section 8: Two new revenue rows (Stabilization fee $50/unit/month; Works renovation contract ~$175/unit)
+- Section 8a: Separate $100K Stabilization reserve; depletion trigger at >20% default rate
+- Section 9: 5 new [NEW] risk rows (delinquent pitch mismatch, SSI-Works offset, Chapter 10 vs. UPCS, labor ceiling, owner reachability)
+- Section 10: Month 13–17 and Month 18–22 phases added
+- Section 11: Q7–Q9 added (Chapter 10/UPCS equivalence, SSI representative payees, Works fully-loaded cost)
+- Section 12: K6–K10 kill switches added (Chapter 10 desk research / free; SSI default rate benchmark / free; owner reachability $80 test; Works-SSI interaction analysis / free; Solar PPA calls / free)
+- Section 13: O10–O12 opportunities added (substandard below-FMR voucher, abandoned stabilization, no-voucher SSI track); OST table updated with Phase 2.5b column
+- Section 14: 14f and 14g appendices added; differentiation and value prop tables updated with Ray row and renovation exchange
+
+#### 2. Persona 6 — Ray, Distressed Property Owner (`stakeholder-personas.md`)
+- 64-year-old Dallas resident; inherited 3BR Fifth Ward house; 4-year vacancy; $430/month carry; $25K renovation quote he can't afford
+- JTBD: Convert bleeding liability to income without physical presence
+- Core insight: Emotional pain (mother's house) > financial pain; correct pitch is "protect what your mother built" not "stop losing money"; sales process must accommodate deliberate decision-making (30-day rush won't work)
+- Journey map: AWARENESS → EVALUATION → DECISION → RENOVATION → ACTIVE TENANCY; friction peaks at trust/evaluation stage
+- Product fit: Phase 2.5b exact fit; segmentation trigger: verify HCAD delinquency before pitch (delinquent → salvage; current → liability-to-asset)
+- Works-SSI structural constraint noted in persona card
+- North Star: "Monthly deposit arrives, no calls needed, property looks better than I left it"
+- Stakeholder Tension Map updated with 2 rows for Ray's tensions
+
+#### 3. `HomeGuarantee_Financial_Projection.xlsx` rebuilt (4 sheets, zero formula errors)
+- **Assumptions sheet**: 30+ rows covering all tiers; Stabilization-specific assumptions (18% claims rate, $2,800 avg payout, $100K pilot reserve, $50/unit/month fee, Works renovation contract revenue $175/unit)
+- **Annual P&L** (Years 0–5): Added REV_STABILIZATION and REV_WORKS_RENOVATION rows; total revenue, gross profit, EBITDA, and net income; Stabilization adds $0.6M ARR by Year 5; Works renovation adds $262.5K
+- **Monthly Detail** (M1–M36): Unit ramp for all 4 tiers with churn applied; founding waiver (M1–M3); Stabilization starts M22, Works renovation contracts from M20; per-tier revenue, claims (HCV and Stabilization separate), COGS, opex, EBITDA with conditional formatting
+- **Unit Economics**: Side-by-side per-unit economics for Basic, Managed, Stabilization; Works renovation labor ceiling table (active vs. delinquent); Kill switches K6–K10 embedded at bottom of sheet
+
+**Key numbers:**
+- Stabilization claims rate: 18% (vs. 12% HCV); avg claim $2,800 (vs. $3,500 HCV)
+- Works renovation contract revenue: $175/unit (non-delinquent owners only)
+- Stabilization reserve: $100K earmarked separately from main $2M fund
+- Break-even: ~Month 28 (no grants); grants bridge early deficit
+- Zero formula errors confirmed by reload verification
+
+
+---
+
+## Entry 11 — June 7, 2026
+
+**Prompt:** "I want this entire plan to be presented as a multi-page website to be hosted on a public URL on github.io - create the pages, summaries, navigation structure, provide downloadable assets. Showcase the entire business & investment case on the website." (Continued from compacted session — building the remaining 5 pages after index.html, problem.html, solution.html were completed in the prior session.)
+
+**Clarifications already captured (prior session):**
+- GitHub setup: "Create files only" — user will push themselves
+- Site focus: "Both equally" — dual audience (investors and policy/CoC partners)
+
+**Response — Session completion:**
+
+Built all remaining pages of the HomeGuarantee GitHub Pages static site at `/Users/eeshanchatterjee/claude/Projects/LessHomelessness/site/`:
+
+**Pages completed this session:**
+
+`financials.html` — 5-year financial projections with 4 Chart.js charts: (1) stacked revenue bar by tier Y1–Y5, (2) active units line chart M1–M36 by tier, (3) EBITDA trajectory bar, (4) TAM/SAM/SOM doughnut. Annual P&L table with all 6 revenue lines including Stabilization ($3.6K→$720K) and Works renovation ($3.5K→$263K). Unit economics by tier table (Basic 60% margin, Managed 33%, Stabilization 16%). Assumptions table with claims, pricing, Works economics, fund governance.
+
+`model.html` — Business model. 4 tier cards (Basic, Managed, HA SaaS, Stabilization) with pricing, feature lists, and target unit counts. Works renovation 5th revenue stream card with owner-type comparison table. Works Renovation Exchange 4-step flow. Dual reserve fund structure (HCV $2M / Stabilization $100K). Grant bridge plan (Year 0: $300K, Year 1: $500K, Year 2+: $0). 6-phase release plan grid (P1 through P5 including Phase 2.5b).
+
+`personas.html` — All 6 stakeholder personas: Marcus (risk-averse landlord), Patricia (housing authority director), Jerome (Works employee), Maria (CoC case manager), Devon (HCV holder), Ray (distressed property owner — Phase 2.5b unlock). Each card includes: background narrative, direct quote, JTBD list, pain→gain grid, journey stage bar, north star metric. Ray persona includes two sub-type callouts (Type A active carrier vs Type B delinquent/salvage) and HCAD targeting logic explanation.
+
+`risk.html` — Risk analysis. 10 kill switch table (K1–K10 with trigger, automatic action, rationale). 5 structural tension cards (mission vs financial discipline; Works-SSI offset; CoC dependency; renovation speed vs quality; SB 267 regulatory window). 7 red-team attacks with claim, response, and verdict. Full risk register heat map table with likelihood × impact ratings.
+
+`invest.html` — Dual-audience investment/partnership page with JavaScript tab switcher. Investor tab: $22.9M Year 5 ARR, $4M raise structure (PRI + SAFE + grant), use-of-funds bar chart, 6-milestone timeline to profitability, arbitrage table ($35–50K emergency cost vs $12K housing), competitive moat analysis, comparable transactions table (Rhino, Till, Doorstead, Open Doors, Oregon OHCS). Partners tab: CoC/HHA value propositions, impact metrics table with baselines and targets, nonprofit-vs-company framing. Email CTA at bottom.
+
+`_config.yml` — GitHub Pages config with nav structure, excludes.
+
+`README.md` — Deployment instructions (GitHub repo → Pages → deploy from branch root).
+
+`assets/HomeGuarantee_Financial_Projection.xlsx` — Copied from workspace root to `site/assets/` for download link.
+
+**Full site structure (complete):**
+```
+site/
+  index.html          Landing (prior session)
+  problem.html        Problem analysis (prior session)
+  solution.html       Platform solution (prior session)
+  model.html          Business model (this session)
+  financials.html     Financial projections with Chart.js (this session)
+  personas.html       6 stakeholder personas (this session)
+  risk.html           Risk + kill switches + red team (this session)
+  invest.html         Investor/partner CTA — dual audience (this session)
+  _config.yml         GitHub Pages config (this session)
+  README.md           Deployment instructions (this session)
+  assets/
+    css/style.css
+    js/main.js
+    HomeGuarantee_Financial_Projection.xlsx
+```
+
+**Design decisions:**
+- invest.html uses JS tab switcher (investors vs partners) to serve dual audience on one URL
+- financials.html loads Chart.js from CDN; all charts render from inline JS constants derived from the financial model
+- All pages share identical navbar and footer markup; active link detection via main.js
+- Stabilization tier (Phase 2.5b) visually distinguished with gold border/badge throughout
+

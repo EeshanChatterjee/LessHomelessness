@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stakeholder Personas — HomeGuarantee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+    .fade-in.visible { opacity:1; transform:none; }
+    .persona-hero { display:grid; grid-template-columns:80px 1fr; gap:20px; align-items:start; margin-bottom:20px; }
+    .persona-avatar { width:70px; height:70px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; flex-shrink:0; }
+    .persona-name { font-size:1.4rem; font-weight:800; color:var(--navy); margin:0 0 2px; }
+    .persona-role { font-size:0.85rem; color:var(--muted); }
+    .persona-archetype { display:inline-block; padding:3px 10px; border-radius:20px; font-size:0.7rem; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; margin-top:6px; }
+    .journey-bar { display:flex; gap:0; margin:16px 0; border-radius:8px; overflow:hidden; }
+    .journey-stage { flex:1; padding:8px 6px; text-align:center; font-size:0.68rem; font-weight:600; color:#fff; }
+    .pain-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0; }
+    .pain-item { padding:10px 12px; border-radius:8px; font-size:0.82rem; }
+    .pain-item--pain { background:rgba(192,57,43,0.07); border-left:3px solid var(--red); }
+    .pain-item--gain { background:rgba(45,106,79,0.07); border-left:3px solid var(--green); }
+    .north-star { background:linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%); color:#fff; border-radius:10px; padding:16px; margin-top:16px; font-size:0.85rem; }
+    .north-star__label { font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; opacity:0.7; margin-bottom:4px; }
+    .north-star__metric { font-size:1.1rem; font-weight:700; }
+    .quote-block { border-left:3px solid var(--gold); padding:12px 16px; background:rgba(201,168,76,0.06); border-radius:0 8px 8px 0; margin:12px 0; font-style:italic; font-size:0.88rem; color:var(--text); }
+    .jtbd-item { display:flex; gap:10px; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.83rem; }
+    .jtbd-item:last-child { border:none; }
+    .jtbd-item::before { content:'→'; color:var(--teal); font-weight:700; flex-shrink:0; }
+    .persona-section-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin:16px 0 6px; }
+  </style>
+</head>
+<body>
+<nav class="navbar"><div class="navbar__inner">
+  <a href="index.html" class="navbar__logo">Home<span>Guarantee</span> <span class="nav-badge">PILOT</span></a>
+  <div class="navbar__links">
+    <a href="problem.html">The Problem</a><a href="solution.html">Solution</a><a href="model.html">Business Model</a><a href="financials.html">Financials</a><a href="personas.html" class="active">Stakeholders</a><a href="risk.html">Risk Analysis</a><a href="invest.html" class="btn-nav">Invest / Partner</a>
+  </div>
+</div></nav>
+
+<header class="hero" style="padding:64px 0 48px;">
+  <div class="container">
+    <div class="hero__eyebrow">👥 Six Stakeholder Personas · June 2026</div>
+    <h1>Who HomeGuarantee serves — and how</h1>
+    <p>Six distinct stakeholder archetypes across the housing system. Each has a distinct pain profile, north star metric, and relationship to the HomeGuarantee platform. The system only works when all six are served simultaneously.</p>
+  </div>
+</header>
+
+<!-- PERSONA OVERVIEW -->
+<section>
+  <div class="container">
+    <div class="grid-3 fade-in">
+      <a href="#Marcus" class="card" style="text-decoration:none;text-align:center;padding:20px;">
+        <div style="font-size:2.5rem;">🏠</div>
+        <div style="font-weight:700;color:var(--navy);margin:8px 0 4px;">Marcus</div>
+        <div style="font-size:0.8rem;color:var(--muted);">The Risk-Averse Landlord</div>
+        <div style="margin-top:8px;"><span class="persona-archetype" style="background:rgba(31,122,140,0.12);color:var(--teal);">HCV Skeptic</span></div>
+      </a>
+      <a href="#Patricia" class="card" style="text-decoration:none;text-align:center;padding:20px;">
+        <div style="font-size:2.5rem;">🏛️</div>
+        <div style="font-weight:700;color:var(--navy);margin:8px 0 4px;">Patricia</div>
+        <div style="font-size:0.8rem;color:var(--muted);">The Housing Authority Director</div>
+        <div style="margin-top:8px;"><span class="persona-archetype" style="background:rgba(31,56,100,0.1);color:var(--navy);">System Builder</span></div>
+      </a>
+      <a href="#Jerome" class="card" style="text-decoration:none;text-align:center;padding:20px;">
+        <div style="font-size:2.5rem;">👷</div>
+        <div style="font-weight:700;color:var(--navy);margin:8px 0 4px;">Jerome</div>
+        <div style="font-size:0.8rem;color:var(--muted);">The Works Employee</div>
+        <div style="margin-top:8px;"><span class="persona-archetype" style="background:rgba(45,106,79,0.1);color:var(--green);">Economic Ladder</span></div>
+      </a>
+      <a href="#Maria" class="card" style="text-decoration:none;text-align:center;padding:20px;">
+        <div style="font-size:2.5rem;">🧑‍⚕️</div>
+        <div style="font-weight:700;color:var(--navy);margin:8px 0 4px;">Maria</div>
+        <div style="font-size:0.8rem;color:var(--muted);">The CoC Case Manager</div>
+        <div style="margin-top:8px;"><span class="persona-archetype" style="background:rgba(201,168,76,0.12);color:var(--gold);">Coordination Hub</span></div>
+      </a>
+      <a href="#Devon" class="card" style="text-decoration:none;text-align:center;padding:20px;">
+        <div style="font-size:2.5rem;">🧑‍🦽</div>
+        <div style="font-weight:700;color:var(--navy);margin:8px 0 4px;">Devon</div>
+        <div style="font-size:0.8rem;color:var(--muted);">The HCV Holder</div>
+        <div style="margin-top:8px;"><span class="persona-archetype" style="background:rgba(192,57,43,0.08);color:var(--red);">Voucher Trap</span></div>
+      </a>
+      <a href="#Ray" class="card" style="text-decoration:none;text-align:center;padding:20px;border:2px solid var(--gold);">
+        <div style="font-size:2.5rem;">🔑</div>
+        <div style="font-weight:700;color:var(--navy);margin:8px 0 4px;">Ray</div>
+        <div style="font-size:0.8rem;color:var(--muted);">The Distressed Owner</div>
+        <div style="margin-top:8px;"><span class="persona-archetype" style="background:rgba(201,168,76,0.15);color:var(--gold);">Phase 2.5b New</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONA 1: MARCUS -->
+<section id="Marcus" class="section--alt">
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Persona 1</span><h2>Marcus — The Risk-Averse Landlord</h2></div>
+    <div class="card fade-in">
+      <div class="persona-hero">
+        <div class="persona-avatar" style="background:rgba(31,122,140,0.12);">🏠</div>
+        <div>
+          <div class="persona-name">Marcus T.</div>
+          <div class="persona-role">Small landlord · 3 properties · S-Corp LLC · Houston Heights</div>
+          <span class="persona-archetype" style="background:rgba(31,122,140,0.12);color:var(--teal);">HCV Skeptic → Converted Advocate</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="persona-section-label">Background</div>
+          <p style="font-size:0.88rem;">Marcus owns 3 single-family rentals. He inherited one property, bought two as investment. His previous Section 8 experience ended badly — one tenant left $4,700 in damage, one inspection failed without warning. He's been HCV-free for 4 years. He's not a bad actor; he's burned. His current tenants pay $1,450/mo market rate but he worries every month about late payments and turnover costs.</p>
+          <div class="quote-block">"I don't hate the program. I hate what happened to me the last time I trusted it. Show me the backstop and I'll reconsider."</div>
+          <div class="persona-section-label">JTBD — Jobs to Be Done</div>
+          <div class="jtbd-item">Protect my cash flow from a single bad-actor tenant wiping out 3 months of profit</div>
+          <div class="jtbd-item">Know within 48 hours if a unit is at risk of damage or non-payment</div>
+          <div class="jtbd-item">Reduce time spent on property management — I have a day job</div>
+          <div class="jtbd-item">Access HCV demand without navigating HUD bureaucracy</div>
+        </div>
+        <div>
+          <div class="persona-section-label">Pain → Gain</div>
+          <div class="pain-grid">
+            <div class="pain-item pain-item--pain">HCV inspection process took 3 months + surprise failures</div>
+            <div class="pain-item pain-item--gain">Pre-inspected unit acceptance — no repeated failures</div>
+            <div class="pain-item pain-item--pain">Previous $4,700 damage claim took 8 months to resolve through HUD</div>
+            <div class="pain-item pain-item--gain">30-day guarantee payout — no bureaucratic lag</div>
+            <div class="pain-item pain-item--pain">No visibility into tenant risk before signing lease</div>
+            <div class="pain-item pain-item--gain">Risk-scored tenant match through platform</div>
+            <div class="pain-item pain-item--pain">Missed 47 days vacancy between last two tenants</div>
+            <div class="pain-item pain-item--gain">3-month vacancy waiver covers downtime</div>
+          </div>
+          <div class="journey-bar">
+            <div class="journey-stage" style="background:#C0392B;">Skeptic</div>
+            <div class="journey-stage" style="background:#E67E22;">Curious</div>
+            <div class="journey-stage" style="background:var(--gold);color:#000;">Trials Basic</div>
+            <div class="journey-stage" style="background:var(--teal);">Enrolls 1 unit</div>
+            <div class="journey-stage" style="background:var(--green);">Enrolls all 3</div>
+          </div>
+          <div class="north-star">
+            <div class="north-star__label">North Star Metric</div>
+            <div class="north-star__metric">Time-to-claim-resolution ≤ 30 days for 90% of claims</div>
+            <div style="font-size:0.78rem;opacity:0.8;margin-top:6px;">Secondary: % landlords who re-enroll after first claim paid</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONA 2: PATRICIA -->
+<section id="Patricia">
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Persona 2</span><h2>Patricia — The Housing Authority Director</h2></div>
+    <div class="card fade-in">
+      <div class="persona-hero">
+        <div class="persona-avatar" style="background:rgba(31,56,100,0.1);">🏛️</div>
+        <div>
+          <div class="persona-name">Patricia R.</div>
+          <div class="persona-role">Deputy Director, Houston Housing Authority · 20yr career · Former HUD policy analyst</div>
+          <span class="persona-archetype" style="background:rgba(31,56,100,0.1);color:var(--navy);">System Builder · Policy Driver</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="persona-section-label">Background</div>
+          <p style="font-size:0.88rem;">Patricia manages 18,900 active HCV vouchers. 4,725 (25%) go unused every year because landlords won't accept them. She's accountable to HUD on voucher utilization rates and has been flagged twice for under-performance. She's politically constrained by Texas SB 267 (legal source-of-income discrimination), so she can't mandate acceptance. She needs a market-based mechanism that makes HCV attractive without legislative change.</p>
+          <div class="quote-block">"I have $235M in voucher funds. I can't get landlords to take the vouchers. If you can solve that, I'll fund your guarantee reserve myself."</div>
+          <div class="persona-section-label">JTBD — Jobs to Be Done</div>
+          <div class="jtbd-item">Increase HCV utilization rate from 75% to 95% within 24 months</div>
+          <div class="jtbd-item">Demonstrate measurable homelessness reduction to HUD without new legislation</div>
+          <div class="jtbd-item">Reduce staff overhead of landlord outreach and onboarding (currently 2 FTE dedicated)</div>
+          <div class="jtbd-item">Build a data-auditable portfolio for HUD reporting</div>
+        </div>
+        <div>
+          <div class="persona-section-label">Pain → Gain</div>
+          <div class="pain-grid">
+            <div class="pain-item pain-item--pain">HUD flags HA when utilization drops below 95%</div>
+            <div class="pain-item pain-item--gain">Platform surfaces landlord acceptance funnel; identifies blockages</div>
+            <div class="pain-item pain-item--pain">2 FTE dedicated solely to landlord outreach with minimal results</div>
+            <div class="pain-item pain-item--gain">Automated landlord onboarding flow via platform</div>
+            <div class="pain-item pain-item--pain">SB 267 legally allows landlords to reject HCV — no enforcement mechanism</div>
+            <div class="pain-item pain-item--gain">Market-based incentive removes need for legal enforcement</div>
+            <div class="pain-item pain-item--pain">No real-time data on why vouchers go unused</div>
+            <div class="pain-item pain-item--gain">Analytics dashboard shows rejection reasons by property type, zip code</div>
+          </div>
+          <div class="north-star">
+            <div class="north-star__label">North Star Metric</div>
+            <div class="north-star__metric">HCV utilization rate ≥ 95% within 24 months of platform go-live</div>
+            <div style="font-size:0.78rem;opacity:0.8;margin-top:6px;">Secondary: landlord onboarding cost per HA FTE ≤ $200/unit/year</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONA 3: JEROME -->
+<section id="Jerome" class="section--alt">
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Persona 3</span><h2>Jerome — The Works Employee</h2></div>
+    <div class="card fade-in">
+      <div class="persona-hero">
+        <div class="persona-avatar" style="background:rgba(45,106,79,0.1);">👷</div>
+        <div>
+          <div class="persona-name">Jerome W.</div>
+          <div class="persona-role">Works crew member · 6 months employed · Previously chronically homeless 4 yrs · Third Ward</div>
+          <span class="persona-archetype" style="background:rgba(45,106,79,0.1);color:var(--green);">Economic Ladder · Workforce Participant</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="persona-section-label">Background</div>
+          <p style="font-size:0.88rem;">Jerome was chronically homeless for 4 years after a back injury ended his HVAC career and led to opioid dependency and job loss. He entered Works via a CoC referral. He now earns $16.83/hr on renovation crews — the first steady income he's had in years. His SSI benefits were reduced when his earnings exceeded the threshold. He lives in a Works transitional unit (NOT a Stabilization unit). He's on a 24-month pathway to market-rate independent housing.</p>
+          <div class="quote-block">"I'm not a charity case. I'm a carpenter. I just needed someone to bet on me first."</div>
+          <div class="persona-section-label">JTBD — Jobs to Be Done</div>
+          <div class="jtbd-item">Earn stable income without triggering SSI clawback that leaves me worse off than unemployment</div>
+          <div class="jtbd-item">Build an employment record that qualifies me for market-rate rental applications</div>
+          <div class="jtbd-item">Develop trade skills (carpentry, HVAC basics, plumbing) that transfer to private sector</div>
+          <div class="jtbd-item">Transition from Works transitional housing to independent market-rate tenancy within 24 months</div>
+        </div>
+        <div>
+          <div class="persona-section-label">Pain → Gain</div>
+          <div class="pain-grid">
+            <div class="pain-item pain-item--pain">SSI reduces $1 for every $2 earned above $85 threshold — earning $600/mo can net less than $0</div>
+            <div class="pain-item pain-item--gain">Works progression plan calibrates hours to avoid SSI cliff — Kill Switch K9 enforced</div>
+            <div class="pain-item pain-item--pain">Background check + no rental history = automatic rejection at all private market listings</div>
+            <div class="pain-item pain-item--gain">Works provides verifiable income + HomeGuarantee letter of support for rental applications</div>
+            <div class="pain-item pain-item--pain">No path from "homeless" to "employed tenant" without co-locating SSI and wages (which creates clawback)</div>
+            <div class="pain-item pain-item--gain">Works transitional units are separate from Stabilization units — no SSI offset loop</div>
+          </div>
+          <div class="north-star">
+            <div class="north-star__label">North Star Metric</div>
+            <div class="north-star__metric">% Works employees who achieve independent market-rate tenancy within 24 months</div>
+            <div style="font-size:0.78rem;opacity:0.8;margin-top:6px;">Target: 60% by Year 3. Secondary: 12-month Works retention rate ≥ 70%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONA 4: MARIA -->
+<section id="Maria">
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Persona 4</span><h2>Maria — The CoC Case Manager</h2></div>
+    <div class="card fade-in">
+      <div class="persona-hero">
+        <div class="persona-avatar" style="background:rgba(201,168,76,0.12);">🧑‍⚕️</div>
+        <div>
+          <div class="persona-name">Maria S.</div>
+          <div class="persona-role">Case Manager, The Way Home Houston CoC · 8yr role · Manages 35 active clients</div>
+          <span class="persona-archetype" style="background:rgba(201,168,76,0.12);color:var(--gold);">Coordination Hub · HMIS Operator</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="persona-section-label">Background</div>
+          <p style="font-size:0.88rem;">Maria manages 35 active clients across the HMIS system. She's the human glue of the housing system — she knows every landlord, every referral pathway, every waitlist. She's chronically understaffed (budget cuts in Year 2 reduced her team by 20%) and relies on a patchwork of spreadsheets, HMIS exports, and phone calls. She's been excited by HomeGuarantee because it promises to give her clients more landlord options — but she's seen too many "savior" platforms fail to stick.</p>
+          <div class="quote-block">"I don't need another app. I need landlords who will pick up my call on Friday afternoon when my client is about to sleep in a parking lot."</div>
+          <div class="persona-section-label">JTBD — Jobs to Be Done</div>
+          <div class="jtbd-item">Find landlords willing to accept HCV tenants in neighborhoods with transit access</div>
+          <div class="jtbd-item">Reduce time spent on manual landlord matching from 6 hours/placement to &lt;2 hours</div>
+          <div class="jtbd-item">Get real-time data on which units are available — not a list that's 3 weeks stale</div>
+          <div class="jtbd-item">Document housing outcomes in HMIS without double-entry</div>
+        </div>
+        <div>
+          <div class="persona-section-label">Pain → Gain</div>
+          <div class="pain-grid">
+            <div class="pain-item pain-item--pain">Unit availability lists are always outdated — landlords don't update them</div>
+            <div class="pain-item pain-item--gain">Real-time unit availability API via platform (integrated with HMIS)</div>
+            <div class="pain-item pain-item--pain">Every placement requires 12+ landlord calls before finding one willing to accept HCV</div>
+            <div class="pain-item pain-item--gain">HomeGuarantee pre-vetted landlord network — all are HCV-willing</div>
+            <div class="pain-item pain-item--pain">HMIS entry is duplicated across housing authority, CoC, and service provider systems</div>
+            <div class="pain-item pain-item--gain">Single-entry HMIS sync exports to HA and platform simultaneously</div>
+          </div>
+          <div class="north-star">
+            <div class="north-star__label">North Star Metric</div>
+            <div class="north-star__metric">Days from housing referral to signed lease ≤ 21 (down from 63 days baseline)</div>
+            <div style="font-size:0.78rem;opacity:0.8;margin-top:6px;">Secondary: Maria's active caseload she can handle without admin overflow</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONA 5: DEVON -->
+<section id="Devon" class="section--alt">
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Persona 5</span><h2>Devon — The HCV Holder</h2></div>
+    <div class="card fade-in">
+      <div class="persona-hero">
+        <div class="persona-avatar" style="background:rgba(192,57,43,0.08);">🧑‍🦽</div>
+        <div>
+          <div class="persona-name">Devon A.</div>
+          <div class="persona-role">HCV holder, 14 months · Disability SSDI · Former construction worker · East End Houston</div>
+          <span class="persona-archetype" style="background:rgba(192,57,43,0.08);color:var(--red);">Voucher Trap · Forced-to-Choose Tenant</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="persona-section-label">Background</div>
+          <p style="font-size:0.88rem;">Devon received an HCV 14 months ago. His voucher expires in 5 months — he's used 9 of his 12-month search window (extended once already). He's called 47 landlords. 31 didn't return calls. 16 said yes initially, then rejected him after learning he had a voucher. He has SSDI income, no eviction history, and a clean background check. He is a perfect tenant by any objective measure. He just can't find a landlord who will take the voucher. He'll lose the voucher if he doesn't sign by Month 14.</p>
+          <div class="quote-block">"I've never been late on rent in my life. I don't understand why having government-backed guaranteed rent makes me less desirable."</div>
+          <div class="persona-section-label">JTBD — Jobs to Be Done</div>
+          <div class="jtbd-item">Find a 1BR unit in an area with bus access to his medical appointments before voucher expiry</div>
+          <div class="jtbd-item">Not have to explain or defend his voucher status during the application process</div>
+          <div class="jtbd-item">Stay housed long enough to stabilize his health without the stress of impending eviction or voucher loss</div>
+        </div>
+        <div>
+          <div class="persona-section-label">Pain → Gain</div>
+          <div class="pain-grid">
+            <div class="pain-item pain-item--pain">47 landlord rejections — almost all voucher-related despite clean record</div>
+            <div class="pain-item pain-item--gain">HCV-accepting landlord network — guaranteed to accept vouchers</div>
+            <div class="pain-item pain-item--pain">Voucher expiry in 5 months — searching 4 hours/day with no success</div>
+            <div class="pain-item pain-item--gain">Maria matches Devon to a platform landlord in &lt;21 days via CoC referral</div>
+            <div class="pain-item pain-item--pain">SB 267 means landlords face zero legal consequences for HCV rejection</div>
+            <div class="pain-item pain-item--gain">Financial incentive replaces legal mandate — landlords want Devon now</div>
+          </div>
+          <div class="north-star">
+            <div class="north-star__label">North Star Metric</div>
+            <div class="north-star__metric">% HCV holders housed before voucher expiry: target 90% (vs 75% baseline)</div>
+            <div style="font-size:0.78rem;opacity:0.8;margin-top:6px;">Secondary: % housed in areas with transit access</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONA 6: RAY — NEW -->
+<section id="Ray">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-header__eyebrow">Persona 6 · Phase 2.5b · NEW</span>
+      <h2 style="color:var(--gold);">Ray — The Distressed Property Owner</h2>
+    </div>
+    <div class="card fade-in" style="border:2px solid var(--gold);">
+      <div style="background:rgba(201,168,76,0.08);border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:0.85rem;"><strong>⭐ This persona is the strategic unlock for Phase 2.5b.</strong> Ray is the supply constraint that no other persona can solve. Without Ray, the Stabilization tier doesn't exist.</div>
+      <div class="persona-hero">
+        <div class="persona-avatar" style="background:rgba(201,168,76,0.15);">🔑</div>
+        <div>
+          <div class="persona-name">Ray K.</div>
+          <div class="persona-role">Absentee owner · 2 properties · Both vacant 3+ years · One tax-delinquent · Cleveland, OH (owns Houston East End properties)</div>
+          <span class="persona-archetype" style="background:rgba(201,168,76,0.15);color:var(--gold);">Phase 2.5b Supply Unlock · Below-FMR Tier</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="persona-section-label">Background</div>
+          <p style="font-size:0.88rem;">Ray inherited two single-family homes in Houston's East End from his grandmother in 2019. He lives in Cleveland. One property is in acceptable condition but has sat vacant for 2 years — he can't find a tenant he trusts from 1,200 miles away and doesn't have the capital to hire a property manager. The second property is tax-delinquent ($14,000 owed to HCAD), has mold damage, failed electrical wiring, and is at risk of foreclosure within 18 months. Ray has received three letters from HCAD but doesn't know what to do. His maximum valuation scenario is that the properties are "worth something someday."</p>
+          <div class="quote-block">"I can't afford to fix it. I can't afford to sell it. And every month I don't do something, it gets worse. If someone wants to handle it and give me anything back, I'm listening."</div>
+          <div class="persona-section-label">Two Sub-types of Ray</div>
+          <div style="margin-top:8px;">
+            <div style="background:rgba(31,122,140,0.07);border-radius:8px;padding:12px;margin-bottom:8px;font-size:0.83rem;">
+              <strong style="color:var(--teal);">Ray Type A — Active Carrier (Non-Delinquent):</strong> Property 1. Acceptable condition. Vacant 2 yrs. Can sign Renovation Exchange at full contract ($175). Works crew brings unit to habitability standard. Owner pays $175, commits to 18-month $200–350/mo lease. Net: turns a $0 asset into ~$280/mo positive cash flow.
+            </div>
+            <div style="background:rgba(201,168,76,0.07);border-radius:8px;padding:12px;font-size:0.83rem;">
+              <strong style="color:var(--gold);">Ray Type B — Delinquent (Salvage):</strong> Property 2. Tax-delinquent. Mold + electrical. At foreclosure risk. Renovation is a free concession — Ray commits to 18-month $200–350/mo lease; HomeGuarantee's Works crew does the renovation at no cost to Ray. Net: removes foreclosure threat, generates $280/mo. Works earns $14,400 in labor income only (no renovation contract fee).
+            </div>
+          </div>
+          <div class="persona-section-label">JTBD — Jobs to Be Done</div>
+          <div class="jtbd-item">Stop the financial and emotional drain of a vacant property I can't sell or rent from afar</div>
+          <div class="jtbd-item">Avoid foreclosure on the delinquent property without having to move to Houston</div>
+          <div class="jtbd-item">Turn a liability into a monthly cash-flow asset with zero upfront capital outlay</div>
+          <div class="jtbd-item">Not have to deal with tenant management — I'm 1,200 miles away</div>
+        </div>
+        <div>
+          <div class="persona-section-label">HCAD Targeting Logic</div>
+          <div class="callout callout--info" style="margin:0 0 16px;">
+            <div class="callout__icon">🔎</div>
+            <div class="callout__text">HCAD (Harris County Appraisal District) provides public data on: vacant properties, tax delinquency status, absentee owner addresses, property condition flags. HomeGuarantee uses HCAD to identify Ray before Ray knows HomeGuarantee exists.</div>
+          </div>
+          <div class="persona-section-label">Pain → Gain</div>
+          <div class="pain-grid">
+            <div class="pain-item pain-item--pain">Property generates $0 income while accumulating $14K+ in back taxes</div>
+            <div class="pain-item pain-item--gain">Renovation Exchange + 18-mo lease = ~$280/mo net positive cash flow from Day 1</div>
+            <div class="pain-item pain-item--pain">Can't hire a property manager without enough capital to cover deposits</div>
+            <div class="pain-item pain-item--gain">HomeGuarantee manages the property — Ray gets a check, not a call</div>
+            <div class="pain-item pain-item--pain">Foreclosure in 18 months = total asset loss</div>
+            <div class="pain-item pain-item--gain">Works crew renovates property; prevents foreclosure; creates rental income</div>
+            <div class="pain-item pain-item--pain">Renovation cost to bring unit to habitability: $15,000–$40,000</div>
+            <div class="pain-item pain-item--gain">Type B owners: renovation at zero upfront cost in exchange for lease commitment only</div>
+          </div>
+          <div class="north-star" style="background:linear-gradient(135deg, #8B6914 0%, var(--gold) 100%);">
+            <div class="north-star__label">North Star Metric</div>
+            <div class="north-star__metric">Distressed units converted to Stabilization lease within 90 days of HCAD outreach</div>
+            <div style="font-size:0.78rem;opacity:0.8;margin-top:6px;">Target: 30% conversion of outreach → signed lease at 6-month pilot review. Kill Switch K8: if &lt;15% at Month 6, pause Stab enrollment.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer__grid"><div><div class="footer__brand">Home<span>Guarantee</span></div><p>Houston pilot · 2026 · Six-persona stakeholder model</p></div><div><div class="footer__nav-title">Navigate</div><ul class="footer__links"><li><a href="index.html">Home</a></li><li><a href="solution.html">Solution</a></li><li><a href="risk.html">Risk Analysis</a></li><li><a href="invest.html">Invest / Partner</a></li></ul></div></div><div class="footer__bottom"><span>© 2026 HomeGuarantee</span></div></div></footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

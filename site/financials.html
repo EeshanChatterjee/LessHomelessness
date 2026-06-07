@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Projections — HomeGuarantee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+    .fade-in.visible { opacity:1; transform:none; }
+    .chart-container { position:relative; height:320px; }
+    .finance-row { display:flex; justify-content:space-between; align-items:center; padding:11px 0; border-bottom:1px solid var(--border); font-size:0.9rem; }
+    .finance-row:last-child { border:none; }
+    .finance-total { font-weight:700; background:rgba(31,122,140,0.07); margin:0 -16px; padding:12px 16px; border-radius:6px; }
+    .finance-neg { color:var(--red); }
+    .finance-pos { color:var(--green); }
+    .assumption-row { display:flex; gap:16px; padding:12px 0; border-bottom:1px solid var(--border); font-size:0.875rem; }
+    .assumption-row:last-child { border:none; }
+    .assumption-label { color:var(--muted); width:220px; flex-shrink:0; }
+    .assumption-val { font-weight:600; color:var(--text); }
+    .assumption-note { color:var(--muted); font-size:0.8rem; }
+  </style>
+</head>
+<body>
+<nav class="navbar"><div class="navbar__inner">
+  <a href="index.html" class="navbar__logo">Home<span>Guarantee</span> <span class="nav-badge">PILOT</span></a>
+  <div class="navbar__links">
+    <a href="problem.html">The Problem</a><a href="solution.html">Solution</a><a href="model.html">Business Model</a><a href="financials.html" class="active">Financials</a><a href="personas.html">Stakeholders</a><a href="risk.html">Risk Analysis</a><a href="invest.html" class="btn-nav">Invest / Partner</a>
+  </div>
+</div></nav>
+
+<header class="hero" style="padding:64px 0 48px;">
+  <div class="container">
+    <div class="hero__eyebrow">📈 5-Year Financial Model · v2.0 · June 2026</div>
+    <h1>Financial projections with the Stabilization tier</h1>
+    <p>Dual revenue streams: a demand-side guarantee platform fee (Basic, Managed, HA tiers) and a supply-side renovation exchange (Stabilization tier + Works renovation contracts). Break-even ~Month 28. Grants bridge the gap.</p>
+    <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="assets/HomeGuarantee_Financial_Projection.xlsx" class="btn btn-gold" download>Download Full Model (xlsx) ↓</a>
+    </div>
+  </div>
+</header>
+
+<!-- ANNUAL P&L -->
+<section>
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Annual P&L</span><h2>Years 0–5 Summary</h2></div>
+    <div class="fade-in" style="overflow-x:auto;">
+      <table style="min-width:700px;">
+        <thead>
+          <tr>
+            <th>Line Item</th>
+            <th>Year 0</th><th>Year 1</th><th>Year 2</th><th>Year 3</th><th>Year 4</th><th>Year 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Basic guarantee fee</strong></td><td>—</td><td>$260K</td><td>$1.21M</td><td>$3.15M</td><td>$5.78M</td><td>$8.93M</td></tr>
+          <tr><td><strong>Managed tier fee</strong></td><td>—</td><td>—</td><td>$180K</td><td>$1.20M</td><td>$3.36M</td><td>$7.20M</td></tr>
+          <tr><td><strong>HA platform fee</strong></td><td>—</td><td>—</td><td>$153K</td><td>$1.31M</td><td>$3.15M</td><td>$5.78M</td></tr>
+          <tr><td><strong>Stabilization tier fee</strong> <span class="pill pill--gold" style="font-size:0.65rem;padding:2px 6px;">NEW</span></td><td>—</td><td>—</td><td>$3.6K</td><td>$72K</td><td>$240K</td><td>$720K</td></tr>
+          <tr><td><strong>Works renovation contracts</strong> <span class="pill pill--gold" style="font-size:0.65rem;padding:2px 6px;">NEW</span></td><td>—</td><td>—</td><td>$3.5K</td><td>$35K</td><td>$105K</td><td>$263K</td></tr>
+          <tr style="background:rgba(31,122,140,0.07);font-weight:700;"><td>TOTAL REVENUE</td><td>—</td><td>$260K</td><td>$1.55M</td><td>$5.77M</td><td>$12.6M</td><td>$22.9M</td></tr>
+          <tr><td class="finance-neg">Claims — HCV tier</td><td>—</td><td>$(18K)</td><td>$(90K)</td><td>$(252K)</td><td>$(497K)</td><td>$(828K)</td></tr>
+          <tr><td class="finance-neg">Claims — Stabilization tier</td><td>—</td><td>—</td><td>$(3.2K)</td><td>$(32K)</td><td>$(86K)</td><td>$(194K)</td></tr>
+          <tr><td class="finance-neg">Managed COGS (Works + trades)</td><td>—</td><td>—</td><td>$(90K)</td><td>$(600K)</td><td>$(1.68M)</td><td>$(3.60M)</td></tr>
+          <tr style="background:rgba(31,122,140,0.07);font-weight:700;"><td>GROSS PROFIT</td><td>—</td><td>$242K</td><td>$1.36M</td><td>$4.89M</td><td>$10.3M</td><td>$18.3M</td></tr>
+          <tr><td class="finance-neg">Headcount</td><td>$(100K)</td><td>$(324K)</td><td>$(850K)</td><td>$(1.69M)</td><td>$(2.81M)</td><td>$(4.50M)</td></tr>
+          <tr><td class="finance-neg">GTM</td><td>$(30K)</td><td>$(122K)</td><td>$(300K)</td><td>$(600K)</td><td>$(900K)</td><td>$(1.20M)</td></tr>
+          <tr><td class="finance-neg">Technology</td><td>$(6K)</td><td>$(102K)</td><td>$(240K)</td><td>$(300K)</td><td>$(360K)</td><td>$(420K)</td></tr>
+          <tr><td class="finance-neg">G&A</td><td>$(24K)</td><td>$(144K)</td><td>$(240K)</td><td>$(360K)</td><td>$(480K)</td><td>$(600K)</td></tr>
+          <tr style="background:rgba(192,57,43,0.05);font-weight:700;"><td>EBITDA</td><td class="finance-neg">$(160K)</td><td class="finance-neg">$(450K)</td><td class="finance-neg">$(270K)</td><td class="finance-pos">$1.94M</td><td class="finance-pos">$5.75M</td><td class="finance-pos">$11.6M</td></tr>
+          <tr><td style="color:var(--muted);">Grant income (below line)</td><td>$300K</td><td>$500K</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr style="background:rgba(45,106,79,0.06);font-weight:700;"><td>NET (EBITDA + Grants)</td><td class="finance-pos">$140K</td><td class="finance-pos">$50K</td><td class="finance-neg">$(270K)</td><td class="finance-pos">$1.94M</td><td class="finance-pos">$5.75M</td><td class="finance-pos">$11.6M</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:16px;display:flex;gap:16px;flex-wrap:wrap;">
+      <div class="callout callout--info" style="flex:1;min-width:250px;">
+        <div class="callout__icon">⏱️</div>
+        <div class="callout__text"><strong>Break-even: ~Month 28</strong> without grants. Grant income from CoC and foundations bridges the gap through Year 2.</div>
+      </div>
+      <div class="callout callout--success" style="flex:1;min-width:250px;">
+        <div class="callout__icon">📦</div>
+        <div class="callout__text"><strong>Stabilization tier adds $720K ARR by Year 5</strong> (600 units × $50/mo × 12). Works renovation adds $263K. Small in Year 2; meaningful at scale.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARTS -->
+<section class="section--alt">
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Visualizations</span><h2>Revenue growth and unit ramp</h2></div>
+    <div class="grid-2 fade-in">
+      <div class="card">
+        <h4 style="margin-bottom:20px;">Revenue by tier — Year 1 to Year 5 ($M)</h4>
+        <div class="chart-container">
+          <canvas id="revenueChart"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:20px;">Active units by tier — M1 to M36</h4>
+        <div class="chart-container">
+          <canvas id="unitsChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="grid-2 fade-in mt-32">
+      <div class="card">
+        <h4 style="margin-bottom:20px;">EBITDA trajectory ($M)</h4>
+        <div class="chart-container">
+          <canvas id="ebitdaChart"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:20px;">Market size: TAM → SAM → SOM</h4>
+        <div class="chart-container">
+          <canvas id="marketChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY ASSUMPTIONS -->
+<section>
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Model Assumptions</span><h2>Key assumptions and confidence levels</h2></div>
+    <div class="grid-2 fade-in">
+      <div class="card">
+        <h4 style="margin-bottom:16px;">Pricing</h4>
+        <div class="assumption-row"><div class="assumption-label">Basic tier fee</div><div class="assumption-val">$87.50/unit/mo</div><div class="assumption-note">Demand-side; HA pays</div></div>
+        <div class="assumption-row"><div class="assumption-label">Managed tier fee</div><div class="assumption-val">$175–225/unit/mo</div><div class="assumption-note">Avg $200; landlord pays</div></div>
+        <div class="assumption-row"><div class="assumption-label">HA platform fee</div><div class="assumption-val">$87.50/unit/mo</div><div class="assumption-note">Phase 3; Patricia pays</div></div>
+        <div class="assumption-row"><div class="assumption-label">Stabilization tier fee</div><div class="assumption-val">$50/unit/mo</div><div class="assumption-note">Phase 2.5b; starts M22</div></div>
+        <div class="assumption-row"><div class="assumption-label">Works renovation contract</div><div class="assumption-val">$175/unit avg</div><div class="assumption-note">Non-delinquent owners only</div></div>
+
+        <h4 style="margin-top:24px;margin-bottom:16px;">Claims</h4>
+        <div class="assumption-row"><div class="assumption-label">HCV claims rate</div><div class="assumption-val">12%</div><div class="assumption-note">Oregon OHCS benchmark</div></div>
+        <div class="assumption-row"><div class="assumption-label">HCV avg claim payout</div><div class="assumption-val">$3,500</div><div class="assumption-note">Oregon data; to be updated</div></div>
+        <div class="assumption-row"><div class="assumption-label">Stabilization claims rate</div><div class="assumption-val">18%</div><div class="assumption-note">Higher; no HA backstop</div></div>
+        <div class="assumption-row"><div class="assumption-label">Stabilization avg payout</div><div class="assumption-val">$2,800</div><div class="assumption-note">Lower-value units; less risk</div></div>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:16px;">Fund Governance</h4>
+        <div class="assumption-row"><div class="assumption-label">HCV guarantee fund</div><div class="assumption-val">$2,000,000</div><div class="assumption-note">Initial capitalization</div></div>
+        <div class="assumption-row"><div class="assumption-label">Stabilization reserve</div><div class="assumption-val">$100,000</div><div class="assumption-note">Pilot; held separately</div></div>
+        <div class="assumption-row"><div class="assumption-label">HCV reserve minimum</div><div class="assumption-val">$500,000</div><div class="assumption-note">Enrollment pauses if breached</div></div>
+        <div class="assumption-row"><div class="assumption-label">Stab. depletion trigger</div><div class="assumption-val">&gt;20% default at M6</div><div class="assumption-note">Pause Stabilization enrollment</div></div>
+
+        <h4 style="margin-top:24px;margin-bottom:16px;">Works Economics</h4>
+        <div class="assumption-row"><div class="assumption-label">Works base wage</div><div class="assumption-val">$16.83/hr</div><div class="assumption-note">$35K/yr; Kill-9 validates SSI impact</div></div>
+        <div class="assumption-row"><div class="assumption-label">Works fully-loaded cost</div><div class="assumption-val">~$22/hr</div><div class="assumption-note">Uncertainty: $22–$28/hr</div></div>
+        <div class="assumption-row"><div class="assumption-label">Active carrier ceiling</div><div class="assumption-val">2,305 hrs</div><div class="assumption-note">$38,800 total value ÷ $16.83</div></div>
+        <div class="assumption-row"><div class="assumption-label">Delinquent owner ceiling</div><div class="assumption-val">856 hrs</div><div class="assumption-note">$14,400 income only ÷ $16.83</div></div>
+        <div class="assumption-row"><div class="assumption-label">Monthly churn rate</div><div class="assumption-val">1.25%</div><div class="assumption-note">15% annual; all active tiers</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIT ECONOMICS -->
+<section class="section--alt">
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Unit Economics</span><h2>Per-unit gross margin by tier</h2></div>
+    <div class="fade-in table-wrap">
+      <table>
+        <thead>
+          <tr><th>Metric</th><th>Basic (HCV)</th><th>Managed (HCV)</th><th>Stabilization</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Monthly platform fee</td><td>$87.50</td><td>$200.00</td><td>$50.00</td></tr>
+          <tr><td>Annual fee per unit</td><td>$1,050</td><td>$2,400</td><td>$600</td></tr>
+          <tr><td>Annual expected claim cost</td><td class="finance-neg">$(420)</td><td class="finance-neg">$(420)</td><td class="finance-neg">$(504)</td></tr>
+          <tr><td>Annual managed COGS</td><td>—</td><td class="finance-neg">$(1,200)</td><td>—</td></tr>
+          <tr style="background:rgba(31,122,140,0.07);font-weight:700;"><td>Annual gross profit / unit</td><td class="finance-pos">$630</td><td class="finance-pos">$780</td><td class="finance-pos">$96</td></tr>
+          <tr><td>Gross margin %</td><td><strong>60%</strong></td><td><strong>33%</strong></td><td><strong>16%</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout--warning mt-24 fade-in">
+      <div class="callout__icon">⚠️</div>
+      <div class="callout__text"><strong>Stabilization tier note:</strong> At $50/unit/month, the Stabilization tier generates a 16% gross margin and does not self-fund the $100K pilot reserve at current scale. It is a <em>mission-critical supply expansion</em> mechanism — not a near-term profit center. The reserve is funded by the guarantee fund, not Stabilization revenue. Scale to 600 units by Year 5 generates $720K ARR, which begins to justify the operational overhead.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer__grid"><div><div class="footer__brand">Home<span>Guarantee</span></div><p>Houston pilot · 2026 · <a href="assets/HomeGuarantee_Financial_Projection.xlsx" style="color:var(--gold);" download>Download full model</a></p></div><div><div class="footer__nav-title">Navigate</div><ul class="footer__links"><li><a href="index.html">Home</a></li><li><a href="model.html">Business Model</a></li><li><a href="risk.html">Risk Analysis</a></li><li><a href="invest.html">Invest</a></li></ul></div></div><div class="footer__bottom"><span>© 2026 HomeGuarantee · Projections are forward-looking estimates</span></div></div></footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+const NAVY = '#1F3864', TEAL = '#1F7A8C', GOLD = '#C9A84C', GREEN = '#2D6A4F', RED = '#C0392B', AMBER = '#E67E22';
+const tooltipPlugin = { plugins: { tooltip: { callbacks: { label: ctx => ' $' + ctx.raw.toFixed(1) + 'M' } } } };
+
+// Revenue stacked bar
+new Chart(document.getElementById('revenueChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Year 1','Year 2','Year 3','Year 4','Year 5'],
+    datasets: [
+      { label:'Basic', data:[0.26,1.21,3.15,5.78,8.93], backgroundColor:TEAL },
+      { label:'Managed', data:[0,0.18,1.20,3.36,7.20], backgroundColor:'#2a9db0' },
+      { label:'HA Platform', data:[0,0.15,1.31,3.15,5.78], backgroundColor:NAVY },
+      { label:'Stabilization', data:[0,0.004,0.072,0.24,0.72], backgroundColor:GOLD },
+      { label:'Works Reno', data:[0,0.004,0.035,0.105,0.263], backgroundColor:GREEN },
+    ]
+  },
+  options: { plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:ctx=>' '+ctx.dataset.label+': $'+ctx.raw.toFixed(2)+'M'}}}, responsive:true, maintainAspectRatio:false, scales:{x:{stacked:true},y:{stacked:true,ticks:{callback:v=>'$'+v+'M'}}} }
+});
+
+// Units line chart
+const months = Array.from({length:36},(_,i)=>'M'+(i+1));
+function ramp(arr, churn=0.0125) {
+  const out=[]; let active=0;
+  for(let i=0;i<arr.length;i++){active=active*(1-churn)+arr[i];out.push(Math.round(active));}
+  return out;
+}
+const basicNew = [5,8,12,15,18,20,22,25,28,30,32,35,38,40,42,45,45,48,50,50,52,55,55,58,60,62,65,65,68,70,72,75,75,78,80,82];
+const managedNew = [0,0,0,0,0,0,0,0,5,8,10,12,15,18,20,22,25,28,30,32,35,38,40,42,45,48,50,52,55,58,60,62,65,68,70,72];
+const stabNew = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,2,2,3,3,3,4,4,4,5,5,5,6];
+new Chart(document.getElementById('unitsChart'), {
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: [
+      { label:'Basic', data:ramp(basicNew), borderColor:TEAL, backgroundColor:'rgba(31,122,140,0.1)', fill:true, tension:0.3 },
+      { label:'Managed', data:ramp(managedNew), borderColor:GOLD, backgroundColor:'rgba(201,168,76,0.08)', fill:true, tension:0.3 },
+      { label:'Stabilization', data:ramp(stabNew), borderColor:GREEN, backgroundColor:'rgba(45,106,79,0.08)', fill:true, tension:0.3 },
+    ]
+  },
+  options: { plugins:{legend:{position:'bottom'}}, responsive:true, maintainAspectRatio:false, scales:{y:{ticks:{callback:v=>v+' units'}}} }
+});
+
+// EBITDA
+new Chart(document.getElementById('ebitdaChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Y0','Y1','Y2','Y3','Y4','Y5'],
+    datasets: [{
+      label:'EBITDA ($M)',
+      data:[-0.16,-0.45,-0.27,1.94,5.75,11.6],
+      backgroundColor:[-0.16,-0.45,-0.27,1.94,5.75,11.6].map(v=>v>=0?GREEN:RED)
+    }]
+  },
+  options: { plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>' $'+ctx.raw.toFixed(2)+'M'}}}, responsive:true, maintainAspectRatio:false, scales:{y:{ticks:{callback:v=>'$'+v+'M'}}} }
+});
+
+// Market doughnut
+new Chart(document.getElementById('marketChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['US TAM ($110M)','Canada TAM ($7.5M)','US SAM ($67M)','SOM Year 3 ($6.3M)'],
+    datasets: [{
+      data:[110,7.5,67,6.3],
+      backgroundColor:[NAVY, TEAL, GOLD, GREEN],
+      borderWidth:0
+    }]
+  },
+  options: { plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:ctx=>' '+ctx.label}}}, responsive:true, maintainAspectRatio:false }
+});
+</script>
+</body>
+</html>

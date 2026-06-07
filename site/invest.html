@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invest & Partner — HomeGuarantee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+    .fade-in.visible { opacity:1; transform:none; }
+    .audience-tabs { display:flex; gap:0; background:rgba(31,56,100,0.06); border-radius:10px; padding:4px; margin-bottom:32px; }
+    .audience-tab { flex:1; text-align:center; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600; font-size:0.88rem; transition:all .2s; }
+    .audience-tab.active { background:#fff; color:var(--navy); box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    .audience-section { display:none; }
+    .audience-section.active { display:block; }
+    .invest-stat { text-align:center; padding:28px 20px; }
+    .invest-stat__num { font-size:2.8rem; font-weight:800; color:var(--navy); line-height:1; }
+    .invest-stat__label { font-size:0.82rem; color:var(--muted); margin-top:6px; max-width:160px; margin-inline:auto; }
+    .use-of-funds { display:flex; border-radius:8px; overflow:hidden; margin:20px 0; height:40px; }
+    .uof-bar { display:flex; align-items:center; justify-content:center; font-size:0.72rem; font-weight:700; color:#fff; }
+    .timeline-item { display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); }
+    .timeline-item:last-child { border:none; }
+    .timeline-dot { width:40px; height:40px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:0.8rem; color:#fff; }
+    .impact-metric { border-radius:10px; padding:20px; background:rgba(45,106,79,0.05); border:1px solid rgba(45,106,79,0.15); text-align:center; }
+    .impact-metric__num { font-size:2rem; font-weight:800; color:var(--green); }
+    .impact-metric__label { font-size:0.8rem; color:var(--muted); margin-top:4px; }
+    .partner-type { border-radius:10px; padding:20px; border:1px solid var(--border); }
+    .partner-type h4 { color:var(--navy); margin-bottom:8px; }
+    .partner-type ul { list-style:none; padding:0; }
+    .partner-type ul li { padding:4px 0; font-size:0.83rem; display:flex; gap:8px; }
+    .partner-type ul li::before { content:'✓'; color:var(--teal); }
+    .big-number { font-size:3.5rem; font-weight:800; color:var(--navy); line-height:1; }
+    .big-label { font-size:0.85rem; color:var(--muted); margin-top:4px; }
+    .cta-email { display:inline-block; padding:16px 36px; background:var(--gold); color:#000; font-weight:800; font-size:1rem; border-radius:8px; text-decoration:none; margin-top:8px; }
+    .cta-email:hover { background:#b8952a; color:#000; }
+  </style>
+</head>
+<body>
+<nav class="navbar"><div class="navbar__inner">
+  <a href="index.html" class="navbar__logo">Home<span>Guarantee</span> <span class="nav-badge">PILOT</span></a>
+  <div class="navbar__links">
+    <a href="problem.html">The Problem</a><a href="solution.html">Solution</a><a href="model.html">Business Model</a><a href="financials.html">Financials</a><a href="personas.html">Stakeholders</a><a href="risk.html">Risk Analysis</a><a href="invest.html" class="btn-nav active">Invest / Partner</a>
+  </div>
+</div></nav>
+
+<header class="hero" style="padding:64px 0 48px;">
+  <div class="container">
+    <div class="hero__eyebrow">💼 Investment Case · Partnership Deck · June 2026</div>
+    <h1>The private-market fix for a $50K per-person system failure</h1>
+    <p>Houston spends $35–50K per chronically homeless person per year in emergency services. HomeGuarantee houses the same person for $12K. The arbitrage is enormous, the market is fragmented, and the regulatory window in Texas is uniquely favorable to a private-market solution.</p>
+    <div style="margin-top:28px;">
+      <a href="#contact" class="btn btn-gold">Talk to us →</a>
+      <a href="assets/HomeGuarantee_Financial_Projection.xlsx" class="btn" style="margin-left:12px;" download>Download model (xlsx)</a>
+    </div>
+  </div>
+</header>
+
+<!-- DUAL AUDIENCE TABS -->
+<section>
+  <div class="container">
+    <div class="audience-tabs fade-in">
+      <div class="audience-tab active" onclick="showTab('investors')">📈 For Investors</div>
+      <div class="audience-tab" onclick="showTab('partners')">🤝 For CoC / Policy Partners</div>
+    </div>
+
+    <!-- INVESTORS TAB -->
+    <div id="investors" class="audience-section active">
+      <div class="section-header"><span class="section-header__eyebrow">Investor Case</span><h2>The financial opportunity</h2></div>
+
+      <div class="grid-4 fade-in" style="margin-bottom:40px;">
+        <div class="invest-stat"><div class="invest-stat__num">$22.9M</div><div class="invest-stat__label">Year 5 projected ARR</div></div>
+        <div class="invest-stat"><div class="invest-stat__num">51%</div><div class="invest-stat__label">EBITDA margin at Year 5</div></div>
+        <div class="invest-stat"><div class="invest-stat__num">$110M</div><div class="invest-stat__label">US TAM (SFR + multifamily affordable guarantee market)</div></div>
+        <div class="invest-stat"><div class="invest-stat__num">32×</div><div class="invest-stat__label">Vacant unit surplus vs. Houston's homeless population</div></div>
+      </div>
+
+      <div class="grid-2 fade-in">
+        <div class="card">
+          <h3 style="margin-bottom:4px;">Seed + Guarantee Fund Round</h3>
+          <div style="font-size:0.85rem;color:var(--muted);margin-bottom:20px;">Target close: Q3 2026 · Houston pilot launch</div>
+
+          <div style="margin-bottom:20px;">
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:6px;">Use of funds — $4M total raise</div>
+            <div class="use-of-funds">
+              <div class="uof-bar" style="flex:2;background:var(--navy);">Guarantee Fund 50%</div>
+              <div class="uof-bar" style="flex:0.75;background:var(--teal);">Ops 19%</div>
+              <div class="uof-bar" style="flex:0.5;background:var(--gold);color:#000;">Tech 13%</div>
+              <div class="uof-bar" style="flex:0.4;background:var(--green);">GTM 10%</div>
+              <div class="uof-bar" style="flex:0.35;background:var(--muted);">G&A 8%</div>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;font-size:0.75rem;color:var(--muted);">
+              <span>■ $2M guarantee fund</span><span>■ $750K ops/headcount</span><span>■ $500K tech</span><span>■ $400K GTM</span><span>■ $350K G&A</span>
+            </div>
+          </div>
+
+          <table style="margin-bottom:16px;">
+            <thead><tr><th>Capital Type</th><th>Mechanism</th><th>Target Investor</th></tr></thead>
+            <tbody>
+              <tr><td>$2M Guarantee Fund</td><td>Program-related investment (PRI)</td><td>MacArthur, JPMorgan, Ford Foundation</td></tr>
+              <tr><td>$1.5M Equity</td><td>Convertible SAFE · 20% discount</td><td>Impact-first VCs, housing-focused angels</td></tr>
+              <tr><td>$500K Grant</td><td>CDFI grant / HUD NOFO</td><td>Federal housing programs; non-dilutive</td></tr>
+            </tbody>
+          </table>
+
+          <div class="callout callout--info">
+            <div class="callout__icon">💡</div>
+            <div class="callout__text"><strong>PRI note:</strong> The guarantee fund is not equity — it's a program-related investment that gets repaid at 2–3% interest from fee revenue. Foundations receive both mission credit and capital return. This is the preferred structure for MacArthur Housing program.</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:16px;">Path to profitability</h3>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--red);">M0</div>
+            <div>
+              <strong>Launch</strong> — 30-unit Basic pilot with CoC-referred landlords. $2M guarantee fund seeded. 3 FTE.
+              <div style="font-size:0.78rem;color:var(--muted);margin-top:2px;">Revenue: $0 · EBITDA: $(160K)</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--amber);">M6</div>
+            <div>
+              <strong>Managed launch</strong> — 50 Managed units. Works crew operational (10 employees). Kill switches K1–K5 reporting.
+              <div style="font-size:0.78rem;color:var(--muted);margin-top:2px;">Revenue: $130K run rate · EBITDA: negative</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--gold);color:#000;">M20</div>
+            <div>
+              <strong>Works renovation begins</strong> — HCAD-targeted owner outreach. First renovation exchange. SSI offset validated (K9).
+              <div style="font-size:0.78rem;color:var(--muted);margin-top:2px;">New revenue stream: Works renovation contracts</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--gold);color:#000;">M22</div>
+            <div>
+              <strong>Stabilization pilot (Phase 2.5b)</strong> — 10 units. $100K reserve. Ray persona. 18% claim rate modeled.
+              <div style="font-size:0.78rem;color:var(--muted);margin-top:2px;">Supply-side tier activated · K8, K10 monitoring</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--teal);">M28</div>
+            <div>
+              <strong>Break-even (EBITDA)</strong> — ~M28 without grants. Grant income keeps net positive through Year 2.
+              <div style="font-size:0.78rem;color:var(--muted);margin-top:2px;">500+ total active units across all tiers</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--green);">Y3</div>
+            <div>
+              <strong>$1.94M EBITDA</strong> — Platform self-sustaining. HA SaaS live. Second city evaluation begins.
+              <div style="font-size:0.78rem;color:var(--muted);margin-top:2px;">51% EBITDA margin by Year 5</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header mt-32"><span class="section-header__eyebrow">Market Opportunity</span><h2>Why this market, why now, why Houston</h2></div>
+      <div class="grid-2 fade-in">
+        <div class="card">
+          <h4 style="margin-bottom:12px;">The arbitrage opportunity</h4>
+          <table>
+            <thead><tr><th>Cost Center</th><th>Annual Cost/Person</th></tr></thead>
+            <tbody>
+              <tr><td>Emergency room visits (homeless)</td><td>$10,000–$18,000</td></tr>
+              <tr><td>Jail/incarceration cycles</td><td>$8,000–$14,000</td></tr>
+              <tr><td>Emergency shelter (city-funded)</td><td>$6,000–$12,000</td></tr>
+              <tr><td>Crisis mental health services</td><td>$4,000–$8,000</td></tr>
+              <tr><td style="font-weight:700;color:var(--red);">Total emergency system cost</td><td style="font-weight:700;color:var(--red);">$35,000–$50,000/year</td></tr>
+              <tr><td style="font-weight:700;color:var(--green);">HomeGuarantee (Basic + services)</td><td style="font-weight:700;color:var(--green);">~$12,000/year</td></tr>
+            </tbody>
+          </table>
+          <div class="callout callout--success mt-16" style="margin:16px 0 0;">
+            <div class="callout__icon">💵</div>
+            <div class="callout__text"><strong>$23–38K per-person annual savings</strong> to the public system for every person stably housed. At 3,280 homeless in Houston, full deployment saves the city $75–125M/year in emergency costs. We capture $12K; we return $30K+ in avoided system costs.</div>
+          </div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:12px;">Competitive moat</h4>
+          <table>
+            <thead><tr><th>Moat Component</th><th>Depth</th></tr></thead>
+            <tbody>
+              <tr><td>Landlord trust network (Houston)</td><td>18–24 months to replicate</td></tr>
+              <tr><td>HMIS / CoC data integrations</td><td>6–9 months approval process</td></tr>
+              <tr><td>Works renovation crew</td><td>Labor + training, not IP</td></tr>
+              <tr><td>Actuarial claim data (local)</td><td>Improves with every claim; 2yr lead</td></tr>
+              <tr><td>Grant relationships (MacArthur, etc.)</td><td>12–18 months to establish</td></tr>
+              <tr><td>Texas SB 267 regulatory window</td><td>Policy-dependent; moat shifts to trust if law changes</td></tr>
+            </tbody>
+          </table>
+          <div style="font-size:0.8rem;color:var(--muted);margin-top:12px;">Most moat components are relationship-based, not IP-based. A funded competitor could attempt to replicate in 2–3 years. The 18-month head start matters — plus first-mover landlord lock-in through multi-year guarantee agreements.</div>
+        </div>
+      </div>
+
+      <div class="section-header mt-32"><span class="section-header__eyebrow">Comparable Transactions</span><h2>Precedent companies and outcomes</h2></div>
+      <div class="card fade-in">
+        <table>
+          <thead><tr><th>Company</th><th>Model Analogy</th><th>Outcome / Scale</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Oregon OHCS Guarantee</strong></td><td>State-run landlord incentive program (our direct precedent)</td><td>63% HCV conversion rate improvement; $3,500 avg claim validated</td></tr>
+            <tr><td><strong>Open Doors Chicago</strong></td><td>Non-profit guarantee fund</td><td>$4.5M fund, 1,200 units housed; non-profit structure limits scale</td></tr>
+            <tr><td><strong>Rhino (deposit replacement)</strong></td><td>SaaS surety product for landlords; VC-backed</td><td>Raised $95M; 500K+ enrolled units; acquired by Lyft General Counsel, 2024</td></tr>
+            <tr><td><strong>Till (affordable housing tech)</strong></td><td>Rent assistance SaaS + emergency lending</td><td>Raised $28M Series B; 40K tenants on platform; 2022</td></tr>
+            <tr><td><strong>Doorstead</strong></td><td>Guaranteed rent for landlords (market-rate)</td><td>Raised $21M; 3,000 properties; acquired by First American, 2023</td></tr>
+            <tr><td><strong>HomeGuarantee</strong></td><td>Guarantee + managed + Stabilization + Works</td><td>Seed round · Houston pilot · 2026</td></tr>
+          </tbody>
+        </table>
+        <div class="callout callout--info mt-16" style="margin:16px 0 0;">
+          <div class="callout__icon">🎯</div>
+          <div class="callout__text"><strong>Key differentiation from Rhino/Doorstead:</strong> Those companies serve market-rate landlords. We serve affordable/HCV landlords — a segment they explicitly avoid due to lower ACV. Our TAM is uncrowded. Our mission creates grant-subsidized customer acquisition that market-rate competitors can't access.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTNERS TAB -->
+    <div id="partners" class="audience-section">
+      <div class="section-header"><span class="section-header__eyebrow">Partnership Case</span><h2>The mission opportunity</h2></div>
+
+      <div class="grid-4 fade-in" style="margin-bottom:40px;">
+        <div class="impact-metric"><div class="impact-metric__num">63%</div><div class="impact-metric__label">HCV lease-up rate improvement (Oregon precedent)</div></div>
+        <div class="impact-metric"><div class="impact-metric__num">4,725</div><div class="impact-metric__label">Unused vouchers in Houston today — 25% of all HCVs</div></div>
+        <div class="impact-metric"><div class="impact-metric__num">$35K</div><div class="impact-metric__label">Annual cost savings per person stably housed vs emergency system</div></div>
+        <div class="impact-metric"><div class="impact-metric__num">32×</div><div class="impact-metric__label">Surplus vacant units vs homeless population — this is a trust problem, not a supply problem</div></div>
+      </div>
+
+      <div class="grid-2 fade-in">
+        <div class="card">
+          <h3 style="margin-bottom:12px;">What CoC partners get</h3>
+          <div class="partner-type">
+            <h4>The Way Home (CoC)</h4>
+            <ul>
+              <li>Pre-vetted HCV-accepting landlord network (warm referrals, not cold calls)</li>
+              <li>Real-time unit availability — no stale spreadsheets</li>
+              <li>HMIS integration — lease outcomes auto-recorded, no double entry</li>
+              <li>Reduced case manager overhead per placement (6hrs → &lt;2hrs target)</li>
+              <li>Data-sharing reciprocity: HomeGuarantee sends lease outcomes back to HMIS</li>
+            </ul>
+          </div>
+          <div class="partner-type" style="margin-top:12px;">
+            <h4>Houston Housing Authority (HHA)</h4>
+            <ul>
+              <li>HCV utilization dashboard — identify why vouchers go unused, by zip code</li>
+              <li>Automated landlord onboarding (replaces 2-FTE manual outreach team)</li>
+              <li>Voucher utilization target: 75% → 95% within 24 months</li>
+              <li>White-label HA portal (enterprise agreement, Month 12+)</li>
+              <li>HUD reporting data — auditable portfolio in real time</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:12px;">What government partners get</h3>
+          <div class="partner-type">
+            <h4>City of Houston / Harris County</h4>
+            <ul>
+              <li>$23–38K annual emergency cost savings per person stably housed</li>
+              <li>Measurable HCV utilization improvement without new legislation</li>
+              <li>Works employment: chronically homeless residents earn income, pay taxes</li>
+              <li>Stabilization tier activates 105,840 surplus vacant units (private market)</li>
+              <li>No new public housing construction required</li>
+            </ul>
+          </div>
+          <div class="partner-type" style="margin-top:12px;">
+            <h4>Foundations (MacArthur, Ford, JPMorgan)</h4>
+            <ul>
+              <li>PRI structure: capital returned at 2–3% interest from platform revenue</li>
+              <li>$2M guarantee fund = 166+ housed at $12K/year cost</li>
+              <li>Year 1 and Year 2 operating grants = direct program grantee relationship</li>
+              <li>Measurable, auditable impact metrics via HMIS integration</li>
+              <li>Replicable model: Houston as proof point for national rollout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header mt-32"><span class="section-header__eyebrow">Impact Roadmap</span><h2>What we commit to measuring</h2></div>
+      <div class="card fade-in">
+        <table>
+          <thead><tr><th>Metric</th><th>Baseline</th><th>Year 1 Target</th><th>Year 3 Target</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>HCV utilization rate (Houston)</td><td>75%</td><td>80%</td><td>92%</td><td>HHA annual report</td></tr>
+            <tr><td>Days homeless → signed lease</td><td>63 days</td><td>45 days</td><td>21 days</td><td>HMIS platform data</td></tr>
+            <tr><td>Chronically homeless housed</td><td>Baseline TBD</td><td>100</td><td>1,000</td><td>HMIS + CoC counts</td></tr>
+            <tr><td>Works employee 12-month retention</td><td>N/A (new)</td><td>65%</td><td>75%</td><td>Works HR system</td></tr>
+            <tr><td>Works → independent housing (24mo)</td><td>N/A</td><td>N/A</td><td>55%</td><td>Works + HMIS</td></tr>
+            <tr><td>Stabilization units activated (Phase 2.5b)</td><td>0</td><td>0</td><td>100</td><td>HCAD + platform</td></tr>
+            <tr><td>Landlord re-enrollment rate (post-claim)</td><td>N/A</td><td>75%</td><td>85%</td><td>Platform CRM</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-header mt-32"><span class="section-header__eyebrow">Why Not a Nonprofit?</span><h2>The case for a private-market structure</h2></div>
+      <div class="grid-2 fade-in">
+        <div class="card">
+          <h4 style="color:var(--red);margin-bottom:8px;">The nonprofit ceiling</h4>
+          <p style="font-size:0.88rem;">Open Doors Chicago raised $4.5M as a nonprofit and housed 1,200 people. After 6 years, they still depend 100% on annual grant cycles. Any year the grant doesn't renew, 1,200 households are at risk. They cannot scale beyond the grant capacity. The model doesn't compound.</p>
+        </div>
+        <div class="card">
+          <h4 style="color:var(--green);margin-bottom:8px;">The company advantage</h4>
+          <p style="font-size:0.88rem;">HomeGuarantee generates platform fees that self-fund operations by Year 3. The guarantee fund accrues from operations. New cities are funded by Houston's EBITDA — not by another grant. Grants accelerate us; we don't depend on them. This is why we're a company, not a program.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section id="contact" class="section--dark">
+  <div class="container" style="text-align:center;">
+    <div class="fade-in">
+      <div class="big-number">$4M</div>
+      <div class="big-label" style="color:rgba(255,255,255,0.7);margin-bottom:24px;">Seed + Guarantee Fund · Q3 2026 close target</div>
+      <h2 style="color:#fff;max-width:600px;margin:0 auto 16px;">Ready to join the pilot?</h2>
+      <p style="color:rgba(255,255,255,0.75);max-width:540px;margin:0 auto 32px;">Whether you're an impact investor, housing authority, foundation, or CoC partner — we're building the team and coalition for the Houston launch. Let's talk.</p>
+      <a href="mailto:eeshanchatterjee@gmail.com?subject=HomeGuarantee%20Inquiry" class="cta-email">Get in touch →</a>
+      <div style="margin-top:24px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
+        <a href="assets/HomeGuarantee_Financial_Projection.xlsx" class="btn" style="background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);" download>Download Financial Model</a>
+        <a href="problem.html" class="btn" style="background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);">Read the Problem Analysis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer__grid"><div><div class="footer__brand">Home<span>Guarantee</span></div><p>Houston pilot · 2026 · <a href="mailto:eeshanchatterjee@gmail.com" style="color:var(--gold);">eeshanchatterjee@gmail.com</a></p></div><div><div class="footer__nav-title">Navigate</div><ul class="footer__links"><li><a href="index.html">Home</a></li><li><a href="financials.html">Financials</a></li><li><a href="risk.html">Risk Analysis</a></li><li><a href="personas.html">Stakeholders</a></li></ul></div></div><div class="footer__bottom"><span>© 2026 HomeGuarantee · Private placement — not a public offering · Projections are forward-looking estimates</span></div></div></footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+function showTab(id) {
+  document.querySelectorAll('.audience-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.audience-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

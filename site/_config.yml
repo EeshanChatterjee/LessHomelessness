@@ -1,0 +1,33 @@
+title: HomeGuarantee
+description: Houston's private-market landlord guarantee platform. Solving HCV voucher under-utilization and supply-side housing scarcity.
+baseurl: ""
+url: ""
+theme: null
+
+# GitHub Pages settings
+plugins: []
+
+# Exclude non-HTML build artifacts
+exclude:
+  - "*.py"
+  - "*.sh"
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+# Navigation structure (informational)
+nav:
+  - label: The Problem
+    href: problem.html
+  - label: Solution
+    href: solution.html
+  - label: Business Model
+    href: model.html
+  - label: Financials
+    href: financials.html
+  - label: Stakeholders
+    href: personas.html
+  - label: Risk Analysis
+    href: risk.html
+  - label: Invest / Partner
+    href: invest.html

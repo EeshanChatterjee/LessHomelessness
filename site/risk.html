@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Risk Analysis — HomeGuarantee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+    .fade-in.visible { opacity:1; transform:none; }
+    .kill-badge { display:inline-block; padding:2px 8px; border-radius:4px; font-size:0.7rem; font-weight:800; font-family:monospace; }
+    .kill-badge--critical { background:rgba(192,57,43,0.15); color:var(--red); }
+    .kill-badge--high { background:rgba(230,126,34,0.15); color:var(--amber); }
+    .kill-badge--stab { background:rgba(201,168,76,0.15); color:var(--gold); }
+    .risk-row { display:grid; grid-template-columns:80px 1fr 1fr 1fr; gap:12px; padding:14px 0; border-bottom:1px solid var(--border); align-items:start; font-size:0.83rem; }
+    .risk-row:last-child { border:none; }
+    .risk-row--header { font-weight:700; font-size:0.72rem; text-transform:uppercase; color:var(--muted); letter-spacing:0.5px; padding-bottom:8px; }
+    .risk-level { display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.72rem; }
+    .risk-level--critical { background:rgba(192,57,43,0.1); color:var(--red); }
+    .risk-level--high { background:rgba(230,126,34,0.1); color:var(--amber); }
+    .risk-level--medium { background:rgba(31,122,140,0.1); color:var(--teal); }
+    .risk-level--low { background:rgba(45,106,79,0.1); color:var(--green); }
+    .tension-card { border-radius:10px; padding:20px; border:1px solid var(--border); }
+    .tension-card h4 { font-size:0.95rem; color:var(--navy); margin-bottom:8px; }
+    .tension-arrow { color:var(--teal); font-weight:700; margin:0 8px; }
+    .red-team-item { padding:14px 16px; border-left:3px solid var(--red); background:rgba(192,57,43,0.04); border-radius:0 8px 8px 0; margin-bottom:12px; }
+    .red-team-item__claim { font-weight:600; font-size:0.88rem; color:var(--navy); }
+    .red-team-item__response { font-size:0.83rem; color:var(--muted); margin-top:6px; }
+    .red-team-item__verdict { font-size:0.78rem; margin-top:6px; font-weight:700; }
+    @media(max-width:768px){ .risk-row{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<nav class="navbar"><div class="navbar__inner">
+  <a href="index.html" class="navbar__logo">Home<span>Guarantee</span> <span class="nav-badge">PILOT</span></a>
+  <div class="navbar__links">
+    <a href="problem.html">The Problem</a><a href="solution.html">Solution</a><a href="model.html">Business Model</a><a href="financials.html">Financials</a><a href="personas.html">Stakeholders</a><a href="risk.html" class="active">Risk Analysis</a><a href="invest.html" class="btn-nav">Invest / Partner</a>
+  </div>
+</div></nav>
+
+<header class="hero" style="padding:64px 0 48px;">
+  <div class="container">
+    <div class="hero__eyebrow">⚠️ Risk Analysis · Kill Switches · Red Team Findings</div>
+    <h1>We've stress-tested the model. Here's what could break it.</h1>
+    <p>HomeGuarantee operates at the intersection of public housing systems, private landlords, vulnerable tenants, and a Works employment program. We've identified 10 kill switches, 5 structural tensions, and 7 red-team attacks on our core assumptions. Kill switches are automatic pause triggers — not aspirational commitments.</p>
+  </div>
+</header>
+
+<!-- KILL SWITCHES -->
+<section>
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Kill Switches</span><h2>10 automatic pause and pivot triggers</h2></div>
+    <div class="callout callout--warning fade-in" style="margin-bottom:28px;">
+      <div class="callout__icon">🛑</div>
+      <div class="callout__text"><strong>Kill switches are not advisory.</strong> Breaching a kill switch threshold triggers automatic enrollment pause and a mandatory board-level review before resuming. They are wired into the financial model and operating procedures.</div>
+    </div>
+    <div class="card fade-in" style="padding:0;overflow:hidden;">
+      <div style="padding:16px 20px;">
+        <div class="risk-row risk-row--header">
+          <div>Kill Switch</div><div>Trigger Condition</div><div>Automatic Action</div><div>Why It Exists</div>
+        </div>
+        <div class="risk-row">
+          <div><span class="kill-badge kill-badge--critical">K1</span></div>
+          <div>Claim rate &gt;18% at Month 6 or any month thereafter</div>
+          <div>Pause all new Basic-tier enrollment. Audit top 20% highest-risk units.</div>
+          <div>At 18% claim rate, expected loss exceeds fee revenue. Model breaks above 22%.</div>
+        </div>
+        <div class="risk-row">
+          <div><span class="kill-badge kill-badge--critical">K2</span></div>
+          <div>HCV guarantee fund drops below $500K minimum reserve</div>
+          <div>Halt all new enrollments until fund recovers. Mandatory donor call within 72hrs.</div>
+          <div>Below $500K, one large correlated claim event (building fire, major damage) could leave guarantees unfunded. Fiduciary duty to enrolled landlords.</div>
+        </div>
+        <div class="risk-row">
+          <div><span class="kill-badge kill-badge--high">K3</span></div>
+          <div>The Way Home CoC refuses HMIS integration at Month 3</div>
+          <div>Pivot to manual landlord-matching only. Re-evaluate CoC partnership model.</div>
+          <div>HMIS access is a platform dependency for scalable tenant matching. Manual is a ceiling at ~50 units.</div>
+        </div>
+        <div class="risk-row">
+          <div><span class="kill-badge kill-badge--high">K4</span></div>
+          <div>Houston Housing Authority declines HA SaaS agreement at Month 12</div>
+          <div>Deprioritize HA tier. Double down on Basic + Managed direct landlord growth.</div>
+          <div>HA SaaS is a $20M ARR opportunity (18,900 vouchers). Its loss doesn't kill the company but delays profitability by 18 months.</div>
+        </div>
+        <div class="risk-row">
+          <div><span class="kill-badge kill-badge--high">K5</span></div>
+          <div>Landlord re-enrollment rate after first claim &lt;70%</div>
+          <div>Claims experience audit. Redesign payout speed or claim process. Consider payout advance.</div>
+          <div>Re-enrollment is the core product metric. If landlords don't come back after a claim, the value prop is broken not the claim rate.</div>
+        </div>
+        <div class="risk-row">
+          <div><span class="kill-badge kill-badge--high">K6</span></div>
+          <div>Managed tier fully-loaded COGS exceed $28/hr for Works crew</div>
+          <div>Pause Managed tier new enrollments. Audit Works crew billing structure.</div>
+          <div>At $28/hr fully-loaded, Managed gross margin approaches zero. The model assumes $22/hr; K6 is the break-even ceiling.</div>
+        </div>
+        <div class="risk-row">
+          <div><span class="kill-badge kill-badge--high">K7</span></div>
+          <div>Landlord acquisition CAC exceeds $800/unit at Month 6</div>
+          <div>Pause paid landlord outreach. Audit conversion funnel. Shift to CoC-referred warm intros only.</div>
+          <div>At $800 CAC, payback period on Basic tier ($630 annual gross margin) exceeds 15 months. Unsustainable at scale.</div>
+        </div>
+        <div class="risk-row">
+          <div><span class="kill-badge kill-badge--stab">K8</span></div>
+          <div>Stabilization lease conversion rate &lt;15% of HCAD-sourced outreach at Month 6 of Phase 2.5b</div>
+          <div>Pause Stabilization enrollment. Re-evaluate Ray persona pitch and targeting logic.</div>
+          <div>Stabilization tier viability depends on owner conversion. Below 15%, the unit economics don't recover the outreach cost.</div>
+        </div>
+        <div class="risk-row">
+          <div><span class="kill-badge kill-badge--stab">K9</span></div>
+          <div>Works-SSI offset confirmed as creating net financial harm to Works employees at Month 3 of employment program</div>
+          <div>Suspend Works employment intake. Engage SSI benefits counselors. Redesign hours/income structure to stay below SSI offset threshold.</div>
+          <div>Works employees earning above SSI threshold lose $0.50 in benefits per $1 earned. At certain income levels, working produces less net income than not working. This is existential for the Works program mission.</div>
+        </div>
+        <div class="risk-row">
+          <div><span class="kill-badge kill-badge--stab">K10</span></div>
+          <div>Stabilization claim rate exceeds 25% at Month 6 of Phase 2.5b</div>
+          <div>Halt all Stabilization enrollment. $100K reserve audit. Board review within 14 days.</div>
+          <div>25% claim rate on $50/unit/mo fee = $150/unit/year expected loss vs $600/unit/year revenue. At 25%, Stabilization is net-negative even before operating costs. Model viability collapses.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRUCTURAL TENSIONS -->
+<section class="section--alt">
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Structural Tensions</span><h2>Inherent trade-offs that can't be fully resolved</h2></div>
+    <div class="grid-2 fade-in">
+      <div class="tension-card">
+        <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Tension 1</div>
+        <h4>Mission scale <span class="tension-arrow">vs.</span> Financial discipline</h4>
+        <p style="font-size:0.83rem;color:var(--muted);">The more vulnerable tenants we house, the higher the expected claim rate. Maximizing mission impact (serving the highest-need tenants) creates the worst unit economics. Stabilization tier is the starkest version: lowest-cost tenants, highest claim rate, 16% margin.</p>
+        <div style="font-size:0.78rem;padding-top:10px;border-top:1px solid var(--border);color:var(--text);"><strong>Resolution:</strong> Cross-subsidize. High-margin Basic and Managed tiers fund the below-cost Stabilization mission. Do not optimize mission and profit from the same unit.</div>
+      </div>
+      <div class="tension-card">
+        <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Tension 2</div>
+        <h4>Works employment income <span class="tension-arrow">vs.</span> Tenant SSI stability</h4>
+        <p style="font-size:0.83rem;color:var(--muted);">Works employment creates earned income that reduces SSI. Stabilization tenants depend on SSI-calculated rent. If Works employees live in Stabilization units they renovated, their earned income raises their rent obligation while reducing SSI — a double-whammy. Co-location is structurally forbidden.</p>
+        <div style="font-size:0.78rem;padding-top:10px;border-top:1px solid var(--border);color:var(--text);"><strong>Resolution:</strong> Strict separation. Works transitional units ≠ Stabilization units. Two separate housing pools, two separate tracking systems. K9 validates separation at Month 3.</div>
+      </div>
+      <div class="tension-card">
+        <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Tension 3</div>
+        <h4>CoC partnership dependency <span class="tension-arrow">vs.</span> Platform independence</h4>
+        <p style="font-size:0.83rem;color:var(--muted);">The Way Home CoC controls HMIS — the data backbone for tenant matching. Without CoC buy-in, the platform is landlord-side only. But full CoC dependency creates a single-partner risk: one leadership change at CFTH could halt operations.</p>
+        <div style="font-size:0.78rem;padding-top:10px;border-top:1px solid var(--border);color:var(--text);"><strong>Resolution:</strong> Multi-CoC strategy. Onboard 3 CoC partners by Month 12. Build proprietary tenant match layer as HMIS backup. K3 triggers manual fallback.</div>
+      </div>
+      <div class="tension-card">
+        <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Tension 4</div>
+        <h4>Distressed owner conversion speed <span class="tension-arrow">vs.</span> Renovation quality</h4>
+        <p style="font-size:0.83rem;color:var(--muted);">Phase 2.5b depends on fast owner conversion (30-day target from HCAD outreach to signed lease). But renovation quality — the core exchange mechanism — requires 6–10 weeks per unit for Works crews. Speed and quality are in tension during the pilot ramp.</p>
+        <div style="font-size:0.78rem;padding-top:10px;border-top:1px solid var(--border);color:var(--text);"><strong>Resolution:</strong> Owners sign lease first; Works crew scheduled within 30 days of signing. Tenant placement only after habitability sign-off. No "fast move-in" shortcuts on safety.</div>
+      </div>
+      <div class="tension-card" style="grid-column:span 2;">
+        <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Tension 5 · Texas SB 267</div>
+        <h4>Legal protection absence <span class="tension-arrow">vs.</span> Market-based workaround</h4>
+        <p style="font-size:0.83rem;color:var(--muted);">Texas SB 267 explicitly legalizes source-of-income discrimination. HomeGuarantee's entire business model is a workaround for this law. This creates a political risk: any future repeal of SB 267 (which is actually a positive social outcome) would reduce our market differentiation and the urgency of our guarantee product. The business model is built on a policy failure.</p>
+        <div style="font-size:0.78rem;padding-top:10px;border-top:1px solid var(--border);color:var(--text);"><strong>Response:</strong> This is an acceptable risk. SB 267 repeal would be net-positive for tenants and for the city. HomeGuarantee's moat shifts from "filling a legal gap" to "deepest landlord trust network in Houston" — which is durable regardless of regulatory change. We do not depend on the problem persisting. We depend on trust.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RED TEAM FINDINGS -->
+<section>
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Red Team</span><h2>Hardest attacks on our core assumptions</h2></div>
+    <div class="fade-in">
+      <div class="red-team-item">
+        <div class="red-team-item__claim">Attack 1: "Your $3,500 average claim is based on Oregon data. Houston landlords have older housing stock — claims will be $6,000+."</div>
+        <div class="red-team-item__response">Houston housing stock is older (median build year 1978 vs Oregon 1989) and more susceptible to water damage in flood events. Our $3,500 avg payout assumption is unvalidated for Houston.</div>
+        <div class="red-team-item__verdict" style="color:var(--amber);">⚠️ REAL RISK. Mitigation: Conduct 12 landlord damage interviews before Month 3. Set $4,500 payout avg in stress model. K1 trigger at 18% reduces exposure if claims are higher.</div>
+      </div>
+      <div class="red-team-item">
+        <div class="red-team-item__claim">Attack 2: "Small landlords won't pay $200/month for Managed tier when they can hire a local PM for $100–150/month."</div>
+        <div class="red-team-item__response">Traditional PM fees in Houston are 8–12% of rent ($116–174/mo on a $1,450/mo unit). Our $200 is at the top of market — the premium requires the guarantee to clearly justify the differential.</div>
+        <div class="red-team-item__verdict" style="color:var(--red);">❌ LEGITIMATE THREAT. Our differentiation must be the guarantee + Works crew expertise, not just price. If Marcus can hire a PM for $120/mo and separately buy damage insurance, we're not competitive. Response: Bundle 3-month vacancy waiver prominently; show total cost of a claim without HomeGuarantee.</div>
+      </div>
+      <div class="red-team-item">
+        <div class="red-team-item__claim">Attack 3: "The Way Home CoC has 100+ partners. Why would they trust a startup with their HMIS data?"</div>
+        <div class="red-team-item__response">HMIS data access requires CoC board approval and typically takes 9–18 months. CFTH (Coalition for the Homeless) has been burned by tech vendors before. API access is not granted based on a presentation.</div>
+        <div class="red-team-item__verdict" style="color:var(--amber);">⚠️ PROCESS RISK, NOT FATAL. Mitigation: Hire a former CFTH or HHA insider as pilot Director. Start with read-only HMIS access (lower bar). Offer data sharing reciprocity — HomeGuarantee sends lease outcome data back to HMIS. K3 is the fallback.</div>
+      </div>
+      <div class="red-team-item">
+        <div class="red-team-item__claim">Attack 4: "Stabilization tenants at $290/month can't afford any unexpected cost. One broken pipe triggers default."</div>
+        <div class="red-team-item__response">At 30% of $967 SSI = $290.10/mo rent. After rent, tenants have $677/mo for food, medicine, transportation, and all incidentals. Any unexpected $300 expense — broken appliance, medical co-pay, transit card — creates a housing instability cascade.</div>
+        <div class="red-team-item__verdict" style="color:var(--red);">❌ TRUE STRUCTURAL VULNERABILITY. Our 18% Stabilization claim rate assumption may still be too low. The Works renovation must include appliance replacement, not just structural habitability. We must also connect tenants to emergency utility assistance programs. Stabilization unit leases should include utility caps. This is solvable but requires active services wrapping, not just a guarantee product.</div>
+      </div>
+      <div class="red-team-item">
+        <div class="red-team-item__claim">Attack 5: "You have 3,280 homeless people in Houston but need landlords who own 3,280 units. That's the actual bottleneck — not demand."</div>
+        <div class="red-team-item__response">True. Houston has 105,840 actionable vacant units (32× the homeless population), but they need landlord owners willing to participate. We cannot compel participation. Our tool is incentive, not mandate.</div>
+        <div class="red-team-item__verdict" style="color:var(--teal);">✓ ACKNOWLEDGED AND CORRECT. This is the core problem statement, not a flaw in our model. The vacancy surplus (32×) means supply is not the bottleneck — landlord trust is. That's exactly what the guarantee addresses. The 32× surplus is our most powerful investor talking point.</div>
+      </div>
+      <div class="red-team-item">
+        <div class="red-team-item__claim">Attack 6: "If the program works, HUD will absorb it. Why build a company instead of a program?"</div>
+        <div class="red-team-item__response">HUD has a history of piloting market-based tools and then either abandoning them (YES program scalability failures) or converting them to grant-dependent programs that lose their market discipline.</div>
+        <div class="red-team-item__verdict" style="color:var(--green);">✓ THIS IS FEATURE NOT BUG. HomeGuarantee being private-market means it can operate in Texas without state or federal approval. SB 267 cannot stop a private guarantee. Speed-to-market and political independence are competitive advantages, not risks.</div>
+      </div>
+      <div class="red-team-item">
+        <div class="red-team-item__claim">Attack 7: "You need $2M in guarantee fund capital upfront. That's a large ask before you've proved the model."</div>
+        <div class="red-team-item__response">The guarantee fund must be pre-positioned — it's not revenue-generated. Without it, we can't credibly offer the guarantee. It must be raised before first enrollment, not as operating capital.</div>
+        <div class="red-team-item__verdict" style="color:var(--amber);">⚠️ FUNDRAISING RISK. Mitigation: Structure initial guarantee fund as a foundation program-related investment (PRI) rather than equity or grant. MacArthur, Ford, and JPMorgan all have PRI facilities for exactly this use case. PRI lenders receive repayment at low interest — this is capital-efficient and precedented.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RISK REGISTER SUMMARY -->
+<section class="section--alt">
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Risk Register</span><h2>Summary heat map</h2></div>
+    <div class="card fade-in" style="padding:0;overflow:hidden;">
+      <div style="padding:16px 20px;">
+        <div class="risk-row risk-row--header">
+          <div>Risk</div><div>Category</div><div>Likelihood × Impact</div><div>Kill Switch</div>
+        </div>
+        <div class="risk-row"><div>HCV claim rate &gt;18%</div><div>Financial</div><div><span class="risk-level risk-level--critical">CRITICAL</span></div><div>K1</div></div>
+        <div class="risk-row"><div>Fund below $500K reserve</div><div>Financial</div><div><span class="risk-level risk-level--critical">CRITICAL</span></div><div>K2</div></div>
+        <div class="risk-row"><div>The Way Home HMIS denial</div><div>Partnership</div><div><span class="risk-level risk-level--high">HIGH</span></div><div>K3</div></div>
+        <div class="risk-row"><div>HHA declines HA SaaS</div><div>Partnership</div><div><span class="risk-level risk-level--high">HIGH</span></div><div>K4</div></div>
+        <div class="risk-row"><div>Landlord re-enrollment &lt;70%</div><div>Product</div><div><span class="risk-level risk-level--high">HIGH</span></div><div>K5</div></div>
+        <div class="risk-row"><div>Works COGS &gt;$28/hr</div><div>Operations</div><div><span class="risk-level risk-level--high">HIGH</span></div><div>K6</div></div>
+        <div class="risk-row"><div>Landlord CAC &gt;$800</div><div>GTM</div><div><span class="risk-level risk-level--high">HIGH</span></div><div>K7</div></div>
+        <div class="risk-row"><div>Stabilization conversion &lt;15%</div><div>Phase 2.5b</div><div><span class="risk-level risk-level--high">HIGH</span></div><div>K8</div></div>
+        <div class="risk-row"><div>Works-SSI net financial harm</div><div>Program</div><div><span class="risk-level risk-level--critical">CRITICAL</span></div><div>K9</div></div>
+        <div class="risk-row"><div>Stabilization claim rate &gt;25%</div><div>Phase 2.5b</div><div><span class="risk-level risk-level--high">HIGH</span></div><div>K10</div></div>
+        <div class="risk-row"><div>SB 267 repeal</div><div>Policy</div><div><span class="risk-level risk-level--low">LOW (BENEFICIAL)</span></div><div>—</div></div>
+        <div class="risk-row"><div>Houston housing market crash</div><div>Macro</div><div><span class="risk-level risk-level--medium">MEDIUM</span></div><div>—</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer__grid"><div><div class="footer__brand">Home<span>Guarantee</span></div><p>Houston pilot · 2026 · Internal risk documentation</p></div><div><div class="footer__nav-title">Navigate</div><ul class="footer__links"><li><a href="index.html">Home</a></li><li><a href="financials.html">Financial Projections</a></li><li><a href="invest.html">Invest / Partner</a></li></ul></div></div><div class="footer__bottom"><span>© 2026 HomeGuarantee</span></div></div></footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

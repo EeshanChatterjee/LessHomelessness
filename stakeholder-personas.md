@@ -1,7 +1,7 @@
 # HomeGuarantee — Stakeholder Personas, Journey Maps & North Star Metrics
-*Date: June 6, 2026*
+*Date: June 7, 2026 — updated v1.6 with Persona 6 (Ray, distressed property owner)*
 
-> Five distinct stakeholders touch HomeGuarantee. Each has a fundamentally different job-to-be-done, a different definition of success, and a different failure mode. The product only works if all five experience value.
+> Six distinct stakeholders touch HomeGuarantee. Each has a fundamentally different job-to-be-done, a different definition of success, and a different failure mode. The product only works if all six experience value.
 
 ---
 
@@ -347,14 +347,16 @@ Friction: None     Skepticism         Low                  High (crisis)        
 | **Patricia (Housing Authority)** | "Voucher utilization rate at 93% in HUD report" | Utilization rate improvement (housing authority dashboard) |
 | **James (CFTH Executive Dir.)** | "Houston ends chronic homelessness. The Way Home's name is on it." | Houston PIT count — chronic homelessness number |
 | **Marcus (Formerly Homeless)** | "Still in my apartment after 12 months" | 12-month tenancy retention rate |
+| **Ray (Distressed Owner)** | "Monthly deposit arrives, no calls needed, property looks better than I left it" | Payment continuity (0 missed months); no owner-initiated support contacts |
 
 ### HomeGuarantee's North Star: Placements per month
-This is the single metric that moves all five stakeholders forward simultaneously:
+This is the single metric that moves all six stakeholders forward simultaneously:
 - More placements → Maria fills her unit, earns rent
 - More placements → DeShawn hits his number, feels like he's winning
 - More placements → Patricia's utilization rate climbs
 - More placements → James's PIT count falls
 - More placements → Marcus gets a key
+- More placements (via Stabilization tier) → Ray's property generates income instead of bleeding cash
 
 **The product's job is to increase the rate at which landlords say yes and deals close. Everything else flows from that.**
 
@@ -371,3 +373,95 @@ Not all stakeholders want the same things at the same time. Knowing where tensio
 | Disclosure vs. dignity | Patricia (needs data) vs. Marcus (wants privacy) | HA needs outcome data; Marcus deserves anonymity | Anonymized aggregate reporting; no individual disclosure to HA |
 | Risk tolerance | Maria (risk-averse) vs. Marcus (needs a chance) | Maria's caution screens out Marcus | Guarantee product rebalances the calculus — Maria's risk goes down, Marcus's access goes up |
 | Pace | James (long-term legacy) vs. HA procurement | James wants national story now; Patricia moves at government pace | Phase 3 sequencing; HG builds the story with CFTH before HA signs |
+| Income vs. stability | Ray (wants rent income) vs. Works tenant (SSI offset risk from Works employment) | Works employment cuts SSI — destabilizing the rent payment that serves Ray | Works participants not co-located in Stabilization units; Works compensation structured within SSI exclusion thresholds |
+| Renovation depth vs. labor ceiling | Ray (wants full renovation) vs. Works program economics | Delinquent owners have lower labor ceiling (~856 hrs) vs. active carriers (2,305 hrs) | Scope renovation depth to owner's actual value ceiling; full renovation only for non-delinquent owners with appreciation upside |
+
+---
+
+## Persona 6: Ray — The Distressed Property Owner
+
+**"I should probably just let it go at this point. But it was my mother's house."**
+
+### Profile
+- **Age:** 64 | **Lives:** Dallas, TX (owns property in Houston's Fifth Ward)
+- **Property:** 3-bedroom single-family home, inherited 11 years ago
+- **Vacancy duration:** 4 years
+- **Carrying costs:** ~$430/month (property taxes + insurance); has not missed a payment yet but is close to stopping
+- **Renovation estimate he received:** $25,000 to bring to HCV UPCS standards (HVAC replacement, plumbing repairs, structural patching)
+- **Last visited the property:** 2 years ago
+- **Emotional relationship to property:** Complicated. The house was his mother's. He feels guilty about its condition. He also feels stuck — he can't afford to fix it and can't bring himself to sell it for scrap value.
+
+### Primary Job-to-be-Done
+Convert a property that is slowly bleeding money into something that generates income — or at minimum stops costing him $430/month — before the city condemns it, a tax lien accelerates, or a vandalism incident creates liability he can't absorb. He is not optimizing for maximum rent. He is optimizing for relief from a problem he doesn't know how to solve.
+
+*"I'm not looking to get rich. I just want it to stop being a weight around my neck."*
+
+### Top 3 Pain Points
+1. **The renovation cost is a wall he can't climb.** $25,000 in upfront capital doesn't exist. He investigated a home repair loan — the property's current condition and his existing mortgage on his Dallas home disqualified him. The unit sits in a catch-22: it needs money to generate money.
+
+2. **Distance makes everything harder.** He is 240 miles away. Every problem — a broken window, a code enforcement notice, a tax bill — requires either a flight he can't justify or ignoring it and hoping it resolves itself. He has chosen "ignore" more than once.
+
+3. **He doesn't know what his options are.** He doesn't know HCAD exists. He doesn't know there are programs that help owners renovate in exchange for affordable rental commitments. His mental model of his options is: (a) fix it himself (impossible), (b) sell it cheap (emotionally blocked), (c) let it decay until something forces his hand.
+
+### Top 3 Desired Gains
+1. **Someone else solves the renovation problem.** He doesn't need to be in charge. He needs a qualified party to assess the property, do the work, and tell him what he needs to sign. He will sign it.
+
+2. **Reliable income he doesn't have to manage.** He is not a landlord by temperament. He never wanted to deal with tenants, repairs, or 2am calls. If HomeGuarantee manages everything and deposits money monthly, that is not a compromise — that is the ideal.
+
+3. **A clear, bounded commitment.** He needs to understand exactly what he's agreeing to: the renovation scope, the rental period, the price, the guarantee terms, and what happens at the end. Vague promises do not move him. A one-page term sheet with a fixed end date does.
+
+### Unexpected Insight
+Ray's stated pain is financial — $430/month in carrying costs. But his real pain is **emotional paralysis**: the property is his mother's house, he doesn't want to let it go, and every choice feels like a loss. The "liability-to-asset" pitch addresses the financial pain but misses the emotional one. The framing that unlocks Ray is not "stop losing money" — it is **"protect what your mother built."** A renovated, occupied property that earns income is a better stewardship outcome than a decaying vacant house. The product is not just a financial solution; it is a way for Ray to do right by something he cares about without having to be present.
+
+This also means Ray's threshold for trust is high. He is not moving fast. He will want to speak with someone at HomeGuarantee, review the agreement with his own eyes (possibly a family member's), and understand what happens to the property when the rental commitment ends. The sales process must accommodate deliberate decision-making — a 30-day rush pitch will not work for Ray.
+
+### Product Fit Assessment
+HomeGuarantee Phase 2.5b (Works Renovation Exchange + Stabilization Tier) addresses Ray's situation precisely:
+- Works renovation removes the capital barrier (no upfront cost to Ray)
+- Managed tier removes the management burden (no landlord duties)
+- Guarantee product protects against tenant damage (his deepest fear about renting)
+- Direct deposit monthly income converts liability to asset
+
+**Critical segmentation check:** Before pitching Ray, verify his HCAD tax payment status. If he is already tax-delinquent (stopped paying), the carrying-cost framing is inaccurate — the pitch shifts to "salvage before auction." If he is current (still paying $430/month), the "liability-to-asset" framing is correct and the pain is live. These are different pitches requiring different conversations.
+
+**Potential friction:** Ray will want to know what HomeGuarantee does with his property if the guarantee fund runs out or the company closes. The rollback plan (CFTH as primary successor, 60-day notice) must be disclosed proactively — not buried in the agreement. He has been burned by vague promises about his mother's house before; transparency is the difference between a signed agreement and a politely declined one.
+
+**Works-SSI structural constraint:** If the tenant placed in Ray's property takes a Works job, their SSI income may be reduced by the earned-income offset — potentially making them unable to pay rent. HomeGuarantee must not place Works participants as tenants in Stabilization units. Ray's income guarantee depends on this design boundary being maintained.
+
+### North Star Metric (Ray's definition of success)
+> *"It's been 8 months. $280 hits my account on the first of every month. I haven't been to Houston once. Last time I drove past on Google Street View, the porch looked better than I've ever seen it. I think my mother would have liked that."*
+
+**His metric:** Monthly income continuity — specifically, zero months where the payment was late or missing. Ray does not track yield or ROI. He tracks whether the problem stopped. If the deposit comes every month without a call from him, he is satisfied. If it stops coming, or if HomeGuarantee calls him to manage something, the product has failed for Ray.
+
+---
+
+## Journey Map: Ray (Distressed Property Owner) — Renovation Exchange Journey
+
+```
+AWARENESS          EVALUATION          DECISION            RENOVATION          ACTIVE TENANCY
+─────────────────────────────────────────────────────────────────────────────────────────────
+Receives certified  Calls HomeGuarantee  Reviews 1-page      Works crew          Rent deposits
+mail from HG        liaison; hears       term sheet;         assesses + begins   on 1st of month;
+about vacant unit   "no cost to you"     consults family     renovation          no action req'd
+HCAD identified
+
+                    "What's the catch?"  Asks: what          Progress photos     Google Street
+                    HG walks through     happens if your     sent monthly to     View check at
+                    renovation-for-      company closes?     Ray via email       month 3: "it
+                    commitment terms     Rollback plan                           looks good"
+                                        explained clearly
+                    Requests Google
+                    Street View of       Signs 36-month      Chapter 10          No management
+                    current condition    rental commitment   inspection passed   calls needed
+                    (discouraged)        agreement
+                                                             Works completes     Annual review
+                    Sent current                             in 6 weeks          call from HG
+                    condition photos                                              liaison
+                    from HG walk-
+                    through instead
+
+Emotion:  😔→😮      🤔 (cautious)        😐→😌 (relieved)    😐 (distant)        😌→😊
+Friction: High     Very high (trust)    High (family check) Low (hands-off)     None
+```
+
+---

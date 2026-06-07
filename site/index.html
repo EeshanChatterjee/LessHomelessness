@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeGuarantee — Ending Landlord Refusal in America</title>
+  <meta name="description" content="HomeGuarantee is a private-market platform that eliminates financial risk for landlords who house formerly homeless individuals — unlocking thousands of idle vouchers and vacant properties." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+    .hero-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-right { position: relative; }
+    .hero-card {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px; padding: 28px; backdrop-filter: blur(10px);
+    }
+    .problem-number { font-size: 4rem; font-weight: 800; color: var(--teal); line-height: 1; }
+    .how-step { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 32px; }
+    .how-step__num {
+      flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
+      background: var(--teal); color: white; font-weight: 700; font-size: 0.95rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .testimonial {
+      background: var(--white); border-radius: var(--radius);
+      padding: 28px; border: 1px solid var(--border); box-shadow: var(--shadow);
+    }
+    .testimonial__avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; background: var(--lt); flex-shrink: 0;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, var(--teal2) 0%, var(--navy) 100%);
+      border-radius: 16px; padding: 56px 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 32px;
+    }
+    @media (max-width: 900px) {
+      .hero-split { grid-template-columns: 1fr; }
+      .cta-banner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo">Home<span>Guarantee</span> <span class="nav-badge">PILOT</span></a>
+    <div class="navbar__links">
+      <a href="problem.html">The Problem</a>
+      <a href="solution.html">Solution</a>
+      <a href="model.html">Business Model</a>
+      <a href="financials.html">Financials</a>
+      <a href="personas.html">Stakeholders</a>
+      <a href="risk.html">Risk Analysis</a>
+      <a href="invest.html" class="btn-nav">Invest / Partner</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-split">
+      <div class="hero__inner">
+        <div class="hero__eyebrow">🏠 Houston Pilot · June 2026</div>
+        <h1>The market solution to landlord refusal</h1>
+        <p>Houston has 18,900 active housing vouchers and only 3,280 homeless people. The gap isn't funding. It's fear. HomeGuarantee eliminates that fear with a private-market financial guarantee — and unlocks thousands of vacant properties in the process.</p>
+        <div class="hero__actions">
+          <a href="invest.html" class="btn btn-gold">Partner With Us →</a>
+          <a href="solution.html" class="btn btn-outline">See the Platform</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-card">
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;">Key Opportunity Metrics</div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:14px;">
+              <span style="color:rgba(255,255,255,0.7);font-size:0.9rem;">Houston vouchers unused</span>
+              <span style="color:var(--gold);font-weight:700;font-size:1.1rem;">~4,725</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:14px;">
+              <span style="color:rgba(255,255,255,0.7);font-size:0.9rem;">Actionable vacant units</span>
+              <span style="color:var(--gold);font-weight:700;font-size:1.1rem;">105,840</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:14px;">
+              <span style="color:rgba(255,255,255,0.7);font-size:0.9rem;">Vacancy surplus ratio</span>
+              <span style="color:var(--gold);font-weight:700;font-size:1.1rem;">32×</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:14px;">
+              <span style="color:rgba(255,255,255,0.7);font-size:0.9rem;">US TAM (platform fees)</span>
+              <span style="color:var(--gold);font-weight:700;font-size:1.1rem;">$105–120M</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="color:rgba(255,255,255,0.7);font-size:0.9rem;">Year 3 ARR target</span>
+              <span style="color:var(--gold);font-weight:700;font-size:1.1rem;">$6.3M</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__metrics mt-48">
+      <div class="hero__metric">
+        <div class="hero__metric-num" data-count="63" data-suffix="%" data-decimals="0">63%</div>
+        <div class="hero__metric-label">Houston homelessness reduction since 2012</div>
+      </div>
+      <div class="hero__metric">
+        <div class="hero__metric-num" data-count="20000" data-prefix="$" data-suffix="K" data-decimals="0">$20K</div>
+        <div class="hero__metric-label">Max guarantee per tenancy</div>
+      </div>
+      <div class="hero__metric">
+        <div class="hero__metric-num" data-count="35000" data-prefix="$" data-suffix="" data-decimals="0">$35K</div>
+        <div class="hero__metric-label">Annual cost of keeping one person homeless</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── PROBLEM SNAPSHOT ── -->
+<section class="section--alt">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-header__eyebrow">The Problem</span>
+      <h2>A solvable crisis hiding in plain sight</h2>
+      <p>Houston reduced homelessness 63% using Housing First — but the remaining 3,280 people face one specific, persistent wall.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card card--teal fade-in">
+        <div class="icon-box icon-box--teal">🚫</div>
+        <div class="problem-number">25%</div>
+        <h4 style="margin-top:8px;">of voucher holders can't use their voucher</h4>
+        <p style="margin-top:8px;">Landlords legally turn them away under Texas SB 267. The voucher expires. The person stays homeless.</p>
+      </div>
+      <div class="card card--teal fade-in">
+        <div class="icon-box icon-box--teal">💸</div>
+        <div class="problem-number">$50K</div>
+        <h4 style="margin-top:8px;">per person per year in emergency services</h4>
+        <p style="margin-top:8px;">The cost of homelessness — 2–3× what stable housing costs. Money spent on the symptom, not the cure.</p>
+      </div>
+      <div class="card card--teal fade-in">
+        <div class="icon-box icon-box--teal">🏚️</div>
+        <div class="problem-number">105K</div>
+        <h4 style="margin-top:8px;">actionable vacant units sit unused</h4>
+        <p style="margin-top:8px;">Many owned by distressed landlords paying $430/month to hold empty properties that generate nothing.</p>
+      </div>
+    </div>
+    <div class="text-center mt-32 fade-in">
+      <a href="problem.html" class="btn btn-ghost">Full Problem Analysis →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section>
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-header__eyebrow">The Solution</span>
+      <h2>How HomeGuarantee works</h2>
+      <p>A private-market platform that converts landlord fear into a guaranteed financial position.</p>
+    </div>
+    <div class="grid-2">
+      <div class="fade-in">
+        <div class="how-step">
+          <div class="how-step__num">1</div>
+          <div>
+            <h4>Landlord enrolls a unit</h4>
+            <p>A private landlord lists their rental unit and receives a HomeGuarantee — covering up to $20K in property damage, unpaid rent (3 months), and vacancy loss. All paperwork handled by HomeGuarantee.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step__num">2</div>
+          <div>
+            <h4>Case manager matches a tenant</h4>
+            <p>A case manager from The Way Home's network finds a compatible unit on the platform — searchable by size, zip, and FMR compatibility. Tenant profiles pre-verified through HMIS.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step__num">3</div>
+          <div>
+            <h4>Tenancy begins with rent guaranteed</h4>
+            <p>Rent deposits on the 1st — before housing authority transfers settle. A tenancy health system triggers proactive case manager contact before problems escalate.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step__num">4</div>
+          <div>
+            <h4>Claims paid within 30 days</h4>
+            <p>When landlords file a claim, we pay within 30 days via ACH — no bureaucratic delays. The speed of payment is a marketing event: it proves the guarantee is real.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="card" style="background:var(--lt);">
+          <h4 style="color:var(--navy);margin-bottom:20px;">Platform Revenue Tiers</h4>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:8px;padding:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <strong style="font-size:0.9rem;">Basic Guarantee</strong>
+                <span class="pill pill--teal">$87.50/unit/mo</span>
+              </div>
+              <p style="font-size:0.8rem;max-width:none;">Housing authority pays. Landlord gets guarantee + admin lift. Available Month 1.</p>
+            </div>
+            <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:8px;padding:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <strong style="font-size:0.9rem;">Managed Tier</strong>
+                <span class="pill pill--gold">$175–225/unit/mo</span>
+              </div>
+              <p style="font-size:0.8rem;max-width:none;">Full property management by HomeGuarantee Works employees. Zero landlord touchpoints. Month 9.</p>
+            </div>
+            <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:8px;padding:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <strong style="font-size:0.9rem;">Stabilization Tier</strong>
+                <span class="pill pill--navy">$50/unit/mo</span>
+              </div>
+              <p style="font-size:0.8rem;max-width:none;">Distressed/abandoned units. Works crew renovates; owner commits to rental. No HCV required. Month 22.</p>
+            </div>
+            <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--green);border-radius:8px;padding:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <strong style="font-size:0.9rem;">HA Platform Fee</strong>
+                <span class="pill pill--green">$87.50/unit/mo</span>
+              </div>
+              <p style="font-size:0.8rem;max-width:none;">Patricia's team pays directly. Follows pilot proof of concept. Month 15.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-32 fade-in">
+      <a href="solution.html" class="btn btn-primary">See Full Platform →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STAKEHOLDER QUOTES ── -->
+<section class="section--alt">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-header__eyebrow">Stakeholders</span>
+      <h2>Six people. One system that works for all of them.</h2>
+    </div>
+    <div class="grid-3 fade-in">
+      <div class="testimonial">
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:16px;">
+          <div class="testimonial__avatar">👩</div>
+          <div>
+            <strong style="font-size:0.9rem;">Maria, Small Landlord</strong>
+            <div style="font-size:0.78rem;color:var(--muted);">4 units · Houston</div>
+          </div>
+        </div>
+        <p style="font-size:0.9rem;font-style:italic;">"My unit is occupied, rent arrives the 1st, and I've had zero HUD paperwork cross my desk. The claim paid in 18 days."</p>
+      </div>
+      <div class="testimonial">
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:16px;">
+          <div class="testimonial__avatar">👨🏾</div>
+          <div>
+            <strong style="font-size:0.9rem;">DeShawn, Case Manager</strong>
+            <div style="font-size:0.78rem;color:var(--muted);">The Way Home network</div>
+          </div>
+        </div>
+        <p style="font-size:0.9rem;font-style:italic;">"7 placements this month. Didn't cold-call a single landlord. Two clients moved in within 14 days of being matched."</p>
+      </div>
+      <div class="testimonial">
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:16px;">
+          <div class="testimonial__avatar">👴🏽</div>
+          <div>
+            <strong style="font-size:0.9rem;">Ray, Distressed Owner</strong>
+            <div style="font-size:0.78rem;color:var(--muted);">Fifth Ward · 4yr vacancy</div>
+          </div>
+        </div>
+        <p style="font-size:0.9rem;font-style:italic;">"$280 deposited every month. Haven't had to fly to Houston once. The house is in better shape than when I left it."</p>
+      </div>
+    </div>
+    <div class="text-center mt-32 fade-in">
+      <a href="personas.html" class="btn btn-ghost">Meet All 6 Stakeholders →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARKET SNAPSHOT ── -->
+<section>
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-header__eyebrow">Market Opportunity</span>
+      <h2>A $110M+ US market. Less than 1% captured.</h2>
+    </div>
+    <div class="stat-grid fade-in">
+      <div class="stat-card">
+        <div class="stat-card__num" data-count="110" data-suffix="M+" data-prefix="$">$110M+</div>
+        <div class="stat-card__label">US TAM (platform fees)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num" data-count="67" data-suffix="M" data-prefix="$">$67M</div>
+        <div class="stat-card__label">US SAM (viable metros, Year 3)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num" data-count="6.3" data-suffix="M" data-prefix="$" data-decimals="1">$6.3M</div>
+        <div class="stat-card__label">Year 3 SOM (ARR)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num" data-count="771500" data-suffix="">771,500</div>
+        <div class="stat-card__label">US homeless (2024 HUD PIT — record high)</div>
+      </div>
+    </div>
+    <div class="text-center mt-32 fade-in">
+      <a href="financials.html" class="btn btn-ghost">See Financial Model →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<section>
+  <div class="container">
+    <div class="cta-banner fade-in">
+      <div>
+        <h2 style="color:var(--white);margin-bottom:12px;">Ready to back the solution?</h2>
+        <p style="color:rgba(255,255,255,0.75);max-width:480px;">We're raising to fund the Houston pilot, Works program launch, and tech platform build. Dual-return for impact investors and CoC partners.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-shrink:0;flex-wrap:wrap;">
+        <a href="invest.html" class="btn btn-gold">Investment Case →</a>
+        <a href="assets/HomeGuarantee_Financial_Projection.xlsx" class="btn btn-outline" download>Download Model ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">Home<span>Guarantee</span></div>
+        <p>A private-market platform eliminating landlord refusal to house formerly homeless individuals. Houston pilot, 2026.</p>
+        <p class="footer__disclaimer mt-16">This site presents an early-stage business plan for the Houston pilot. Financial projections are forward-looking estimates. Past performance of comparable programs does not guarantee future results.</p>
+      </div>
+      <div>
+        <div class="footer__nav-title">Platform</div>
+        <ul class="footer__links">
+          <li><a href="problem.html">The Problem</a></li>
+          <li><a href="solution.html">Our Solution</a></li>
+          <li><a href="model.html">Business Model</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__nav-title">Evidence</div>
+        <ul class="footer__links">
+          <li><a href="financials.html">Financials</a></li>
+          <li><a href="personas.html">Stakeholders</a></li>
+          <li><a href="risk.html">Risk Analysis</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__nav-title">Downloads</div>
+        <ul class="footer__links">
+          <li><a href="assets/HomeGuarantee_Financial_Projection.xlsx" download>Financial Model (xlsx)</a></li>
+          <li><a href="invest.html">Investment Memo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 HomeGuarantee · Houston Pilot</span>
+      <span>Built with open data · <a href="https://www.huduser.gov" style="color:rgba(255,255,255,0.4);">HUD USER</a> · <a href="https://thewayhome.org" style="color:rgba(255,255,255,0.4);">The Way Home</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

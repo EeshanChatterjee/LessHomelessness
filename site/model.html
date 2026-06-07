@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Model — HomeGuarantee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+    .fade-in.visible { opacity:1; transform:none; }
+    .tier-card { border-radius:12px; padding:28px; border:1px solid var(--border); background:#fff; }
+    .tier-card__eyebrow { font-size:0.7rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px; }
+    .tier-card__name { font-size:1.3rem; font-weight:800; color:var(--navy); margin-bottom:4px; }
+    .tier-card__price { font-size:2rem; font-weight:800; line-height:1; margin:12px 0; }
+    .tier-card__price small { font-size:0.9rem; font-weight:500; color:var(--muted); }
+    .tier-card__list { list-style:none; padding:0; margin:16px 0; }
+    .tier-card__list li { padding:5px 0; font-size:0.88rem; display:flex; gap:8px; align-items:flex-start; }
+    .tier-card__list li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; }
+    .tier-card--featured { border:2px solid var(--teal); box-shadow:0 8px 24px rgba(31,122,140,0.12); }
+    .tier-card--new { border:2px solid var(--gold); }
+    .works-flow { display:grid; grid-template-columns:repeat(4,1fr); gap:0; }
+    .works-step { padding:20px 16px; border-right:1px solid var(--border); position:relative; }
+    .works-step:last-child { border:none; }
+    .works-step::after { content:'→'; position:absolute; right:-10px; top:32px; color:var(--teal); font-size:1.1rem; z-index:1; }
+    .works-step:last-child::after { display:none; }
+    .works-step__num { width:32px; height:32px; border-radius:50%; background:var(--teal); color:#fff; font-weight:800; font-size:0.85rem; display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+    .phase-row { display:flex; gap:16px; padding:18px 0; border-bottom:1px solid var(--border); align-items:flex-start; }
+    .phase-row:last-child { border:none; }
+    .phase-badge { width:72px; flex-shrink:0; background:var(--navy); color:#fff; border-radius:6px; padding:6px 0; text-align:center; font-size:0.75rem; font-weight:700; }
+    .fund-stat { text-align:center; padding:24px 16px; border-radius:10px; background:rgba(31,56,100,0.05); }
+    .fund-stat__num { font-size:2.2rem; font-weight:800; color:var(--navy); }
+    .fund-stat__label { font-size:0.8rem; color:var(--muted); margin-top:4px; }
+    @media(max-width:768px){ .works-flow{grid-template-columns:1fr 1fr;} .works-step::after{display:none;} }
+  </style>
+</head>
+<body>
+<nav class="navbar"><div class="navbar__inner">
+  <a href="index.html" class="navbar__logo">Home<span>Guarantee</span> <span class="nav-badge">PILOT</span></a>
+  <div class="navbar__links">
+    <a href="problem.html">The Problem</a><a href="solution.html">Solution</a><a href="model.html" class="active">Business Model</a><a href="financials.html">Financials</a><a href="personas.html">Stakeholders</a><a href="risk.html">Risk Analysis</a><a href="invest.html" class="btn-nav">Invest / Partner</a>
+  </div>
+</div></nav>
+
+<header class="hero" style="padding:64px 0 48px;">
+  <div class="container">
+    <div class="hero__eyebrow">💼 Business Model · Phase 1→5</div>
+    <h1>Four revenue tiers. One mission-aligned structure.</h1>
+    <p>HomeGuarantee monetizes from both sides of the housing market: guarantee platform fees from demand-side stakeholders (HCV landlords, managed-service landlords, housing authorities) and renovation exchange fees from supply-side owners (Stabilization tier + Works renovation contracts). Grant income bridges the gap to break-even.</p>
+  </div>
+</header>
+
+<!-- REVENUE TIERS -->
+<section>
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Revenue Model</span><h2>Platform revenue tiers</h2></div>
+    <div class="grid-4 fade-in">
+      <div class="tier-card">
+        <div class="tier-card__eyebrow" style="color:var(--teal);">Phase 1 · Month 0</div>
+        <div class="tier-card__name">Basic Guarantee</div>
+        <div class="tier-card__price">$87.50<small>/unit/mo</small></div>
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:12px;">Paid by housing authority or CoC. Unit-level guarantee product for HCV landlords.</p>
+        <ul class="tier-card__list">
+          <li>Up to 3-month vacancy coverage</li>
+          <li>Up to 2-month damage coverage ($3,500 cap)</li>
+          <li>Move-in readiness support</li>
+          <li>Basic tenant matching signal</li>
+        </ul>
+        <div style="font-size:0.8rem;padding-top:12px;border-top:1px solid var(--border);color:var(--muted);">Target: 500 units by Year 2</div>
+      </div>
+      <div class="tier-card tier-card--featured">
+        <div class="tier-card__eyebrow" style="color:var(--teal);">Phase 2 · Month 6</div>
+        <div class="tier-card__name">Managed Service</div>
+        <div class="tier-card__price">$200<small>/unit/mo</small></div>
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:12px;">Paid by landlord directly. Full-stack property management plus guarantee.</p>
+        <ul class="tier-card__list">
+          <li>Everything in Basic tier</li>
+          <li>Works crew tenant management</li>
+          <li>Repair coordination</li>
+          <li>Lease administration + renewals</li>
+          <li>Risk score + unit analytics</li>
+        </ul>
+        <div style="font-size:0.8rem;padding-top:12px;border-top:1px solid var(--border);color:var(--muted);">Target: 300 units by Year 3 · Highest margin tier</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-card__eyebrow" style="color:var(--navy);">Phase 3 · Month 12</div>
+        <div class="tier-card__name">Housing Authority SaaS</div>
+        <div class="tier-card__price">$87.50<small>/unit/mo</small></div>
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:12px;">Paid by Patricia (HA) at scale. Platform access for the HA's own voucher pool — 18,900 active HCVs.</p>
+        <ul class="tier-card__list">
+          <li>White-label HA portal</li>
+          <li>HMIS integration (The Way Home)</li>
+          <li>Voucher utilization dashboard</li>
+          <li>Landlord onboarding automation</li>
+          <li>Portfolio risk analytics</li>
+        </ul>
+        <div style="font-size:0.8rem;padding-top:12px;border-top:1px solid var(--border);color:var(--muted);">TAM: Houston alone = $20M ARR at 100% penetration</div>
+      </div>
+      <div class="tier-card tier-card--new">
+        <div class="tier-card__eyebrow" style="color:var(--gold);">Phase 2.5b · Month 22</div>
+        <div class="tier-card__name">Stabilization</div>
+        <div class="tier-card__price">$50<small>/unit/mo</small></div>
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:12px;">Paid by Works employer (HomeGuarantee). Below-FMR supply expansion tier; no HCV; no HUD inspection.</p>
+        <ul class="tier-card__list">
+          <li>$200–350/mo contract rent</li>
+          <li>Works crew basic habitability reno</li>
+          <li>Distressed / abandoned unit targeting</li>
+          <li>18-month minimum lease obligation</li>
+          <li>Separate $100K reserve fund</li>
+        </ul>
+        <div style="font-size:0.8rem;padding-top:12px;border-top:1px solid var(--border);color:var(--gold);">New: supply-side revenue stream · 600 units by Year 5</div>
+      </div>
+    </div>
+
+    <!-- Works Renovation Revenue -->
+    <div class="card fade-in mt-32" style="border-left:4px solid var(--gold);">
+      <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;">
+        <div style="flex:1;min-width:220px;">
+          <span class="section-header__eyebrow" style="color:var(--gold);">Works Renovation Contracts</span>
+          <h3 style="margin-top:4px;">5th Revenue Stream: Renovation Exchange</h3>
+          <p style="color:var(--muted);font-size:0.9rem;">For non-delinquent owners only. Owner pays <strong>$175/unit</strong> toward renovation costs in exchange for Works crew completing habitability upgrades. Enables premium pricing on a premium service. Delinquent owners receive renovation as a free concession (subsidy model) in exchange for rental commitment.</p>
+        </div>
+        <div style="flex:1;min-width:220px;">
+          <table style="margin:0;">
+            <thead><tr><th>Owner Type</th><th>Renovation Model</th><th>Works Revenue</th></tr></thead>
+            <tbody>
+              <tr><td>Non-delinquent active carrier</td><td>Paid renovation exchange</td><td class="finance-pos">$38,800 / project</td></tr>
+              <tr><td>Tax-delinquent (salvage)</td><td>Free reno concession</td><td class="finance-neg">$14,400 income only</td></tr>
+              <tr><td>Active carrier ceiling</td><td>2,305 hrs @ $16.83/hr</td><td>—</td></tr>
+              <tr><td>Delinquent ceiling</td><td>856 hrs @ $16.83/hr</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <div style="font-size:0.78rem;color:var(--muted);margin-top:8px;">Works renovation generates $263K ARR by Year 5 (1,500 units × avg $175 contract ÷ avg hold period). This is in addition to the $50/unit/mo Stabilization fee.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS PROGRAM -->
+<section class="section--alt">
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">The Works Program</span><h2>How formerly homeless employees renovate housing for themselves</h2></div>
+    <div class="card fade-in" style="padding:0;overflow:hidden;">
+      <div class="works-flow">
+        <div class="works-step">
+          <div class="works-step__num">1</div>
+          <h4>Owner commits</h4>
+          <p style="font-size:0.83rem;color:var(--muted);">Owner agrees to 18-month below-FMR lease ($200–350/mo) in exchange for renovation. HCAD targeting identifies distressed/tax-delinquent properties first.</p>
+        </div>
+        <div class="works-step">
+          <div class="works-step__num">2</div>
+          <h4>Works crew scopes</h4>
+          <p style="font-size:0.83rem;color:var(--muted);">Works employees (currently or formerly homeless) complete a habitability assessment. Scope: mold, electrical safety, plumbing, HVAC basics, weatherproofing. No cosmetic work.</p>
+        </div>
+        <div class="works-step">
+          <div class="works-step__num">3</div>
+          <h4>Renovation exchange</h4>
+          <p style="font-size:0.83rem;color:var(--muted);">Works crew completes the renovation. Non-delinquent owners pay $175 contract fee. Delinquent owners get renovation free in exchange for lease commitment only.</p>
+        </div>
+        <div class="works-step">
+          <div class="works-step__num">4</div>
+          <h4>Tenant moves in</h4>
+          <p style="font-size:0.83rem;color:var(--muted);">Stabilization-eligible tenants (SSI recipients at 30% income share = ~$290/mo) placed by The Way Home. Works employees must NOT co-reside in Stabilization units due to SSI offset risk.</p>
+        </div>
+      </div>
+    </div>
+    <div class="callout callout--warning mt-24 fade-in">
+      <div class="callout__icon">⚠️</div>
+      <div class="callout__text"><strong>SSI-Works Structural Constraint:</strong> Works employment reduces SSI benefits. Tenants in Stabilization units are SSI-dependent (30% of ~$967/mo = ~$290/mo rent). Works employees must not be placed as tenants in the same units they renovated. Co-location creates an SSI offset loop that undermines tenancy. Kill Switch K9 validates this before Month 22.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FUND GOVERNANCE -->
+<section>
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Fund Governance</span><h2>Dual reserve fund structure</h2></div>
+    <div class="grid-4 fade-in">
+      <div class="fund-stat"><div class="fund-stat__num">$2M</div><div class="fund-stat__label">HCV Guarantee Fund<br>initial capitalization</div></div>
+      <div class="fund-stat"><div class="fund-stat__num">$500K</div><div class="fund-stat__label">HCV reserve minimum<br>enrollment pauses if breached</div></div>
+      <div class="fund-stat" style="background:rgba(201,168,76,0.08);"><div class="fund-stat__num" style="color:var(--gold);">$100K</div><div class="fund-stat__label">Stabilization pilot reserve<br>held separately from HCV fund</div></div>
+      <div class="fund-stat" style="background:rgba(201,168,76,0.08);"><div class="fund-stat__num" style="color:var(--gold);">&gt;20%</div><div class="fund-stat__label">Stab. default trigger at M6<br>pauses enrollment</div></div>
+    </div>
+    <div class="grid-2 fade-in mt-24">
+      <div class="card">
+        <h4 style="margin-bottom:16px;">HCV Guarantee Fund rules</h4>
+        <div style="font-size:0.88rem;">
+          <div class="phase-row"><div class="phase-badge" style="background:var(--teal);">FLOOR</div><div>$500K minimum reserve. If breached, no new units enrolled until fund recovers. Covers catastrophic claim scenario (1 large unit, repeated claims).</div></div>
+          <div class="phase-row"><div class="phase-badge" style="background:var(--navy);">CLAIMS</div><div>12% claim rate × $3,500 avg payout = $420/unit/year expected loss. 15% churn ensures gradual portfolio refresh, reducing correlated risk.</div></div>
+          <div class="phase-row"><div class="phase-badge" style="background:var(--green);">WAIVER</div><div>3-month vacancy waiver per unit. Not paid from reserve — it's a revenue concession (zero fees during vacant months), not a cash outlay.</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:16px;">Stabilization reserve rules</h4>
+        <div style="font-size:0.88rem;">
+          <div class="phase-row"><div class="phase-badge" style="background:var(--gold);color:#000;">PILOT</div><div>$100K reserve funds 10-unit pilot starting Month 22. Held separately from HCV fund — no commingling.</div></div>
+          <div class="phase-row"><div class="phase-badge" style="background:var(--red);">TRIGGER</div><div>&gt;20% default rate at the 6-month review is an automatic pause trigger. No new Stabilization units enrolled until root-cause analysis complete.</div></div>
+          <div class="phase-row"><div class="phase-badge" style="background:var(--navy);">CLAIMS</div><div>18% claim rate × $2,800 avg = $504/unit/year. Higher claim rate reflects no HA backstop, lower-value units, and distressed owner base.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRANT BRIDGE -->
+<section class="section--alt">
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Non-Dilutive Capital</span><h2>Grant bridge to break-even</h2></div>
+    <div class="grid-2 fade-in">
+      <div class="card">
+        <h4 style="margin-bottom:16px;">Grant income plan</h4>
+        <table>
+          <thead><tr><th>Year</th><th>Grant Income</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>Year 0</td><td>$300K</td><td>MacArthur Foundation, USICH, local CoC</td></tr>
+            <tr><td>Year 1</td><td>$500K</td><td>CDFI grant, HUD NOFO, JPMorgan Housing</td></tr>
+            <tr><td>Year 2+</td><td>$0</td><td>Platform self-funds. Grants depreciate out.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout callout--info mt-16" style="margin:16px 0 0;">
+          <div class="callout__icon">💡</div>
+          <div class="callout__text">Grants are booked <em>below the EBITDA line</em> — they do not mask operating performance. EBITDA goes negative in Year 2 ($270K) as grants phase out; net-of-grants turns positive in Year 3.</div>
+        </div>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:16px;">Target grant sources</h4>
+        <table>
+          <thead><tr><th>Funder type</th><th>Rationale</th><th>Precedent</th></tr></thead>
+          <tbody>
+            <tr><td>MacArthur Foundation</td><td>Housing systems change portfolio</td><td>Oregon OHCS guarantee</td></tr>
+            <tr><td>HUD NOFO</td><td>CoC homelessness reduction programs</td><td>YES program, Houston</td></tr>
+            <tr><td>CDFI Fund</td><td>Affordable housing access</td><td>Multiple guarantors funded</td></tr>
+            <tr><td>JPMorgan PRO Neighborhoods</td><td>Economic mobility, workforce housing</td><td>$40M+ Houston investments</td></tr>
+            <tr><td>City of Houston Housing Dept.</td><td>CoC partnership; HAP funds</td><td>The Way Home CoC</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELEASE PHASES SUMMARY -->
+<section>
+  <div class="container">
+    <div class="section-header fade-in"><span class="section-header__eyebrow">Release Plan</span><h2>Six-phase rollout timeline</h2></div>
+    <div class="card fade-in">
+      <div class="phase-row"><div class="phase-badge">P1<br>M0–M6</div><div><strong>Foundation:</strong> Houston pilot launch. 30-unit Basic guarantee with CoC-referred HCV landlords. HMIS integration with The Way Home. $2M guarantee fund seeded. Hire 3 FTE.</div></div>
+      <div class="phase-row"><div class="phase-badge">P2<br>M6–M12</div><div><strong>Managed Launch:</strong> First 50 Managed Service units. Works crew onboarded (10 employees). Landlord dashboard v1. Kill Switches K1–K5 active and reporting.</div></div>
+      <div class="phase-row"><div class="phase-badge" style="background:var(--gold);color:#000;">P2.5b<br>M20–M24</div><div><strong>Stabilization Pilot:</strong> Works renovation exchange begins Month 20. Stabilization tenants enrolled Month 22 (10-unit pilot). SSI constraint confirmed and documented. $100K pilot reserve activated.</div></div>
+      <div class="phase-row"><div class="phase-badge">P3<br>M12–M24</div><div><strong>HA SaaS:</strong> Patricia (housing authority) signs enterprise agreement. White-label portal, voucher utilization dashboard, HMIS data sync. Scale to 300 Basic + 150 Managed units.</div></div>
+      <div class="phase-row"><div class="phase-badge">P4<br>M24–M36</div><div><strong>Houston Scale:</strong> 1,000+ total units. Works crew scaled to 50 employees. Stabilization to 100 units. Explore works-refurb + solar rooftop add-on for energy burden reduction.</div></div>
+      <div class="phase-row"><div class="phase-badge">P5<br>M36+</div><div><strong>Market Expansion:</strong> Second city (Dallas-Fort Worth or Phoenix). Package Houston learnings as a city-license SaaS model for housing authorities. Evaluate REIT structure for balance-sheet property acquisition.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer__grid"><div><div class="footer__brand">Home<span>Guarantee</span></div><p>Houston pilot · 2026 · Confidential business model</p></div><div><div class="footer__nav-title">Navigate</div><ul class="footer__links"><li><a href="index.html">Home</a></li><li><a href="financials.html">Financial Projections</a></li><li><a href="risk.html">Risk Analysis</a></li><li><a href="invest.html">Invest / Partner</a></li></ul></div></div><div class="footer__bottom"><span>© 2026 HomeGuarantee · Private placement — not a public offering</span></div></div></footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
