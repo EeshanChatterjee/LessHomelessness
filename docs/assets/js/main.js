@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <a href="assets/HomeGuarantee_Financial_Projection.xlsx" class="sidebar__dl-link" download>
         <span class="sidebar__icon">📊</span> Financial Model
       </a>
+      <a href="https://app.notion.com/p/378f80653ecc81439060cfffd0d3e48d" class="sidebar__dl-link" target="_blank" rel="noopener">
+        <span class="sidebar__icon">📋</span> Notion Project Hub
+      </a>
     </div>
   </aside>
   <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">☰</button>

@@ -3,6 +3,55 @@
 
 ---
 
+## Entry 13 — June 7, 2026
+**Session:** Notion Project Setup (Session 4, post-compaction continuation)
+
+### Prompt
+Use the Notion MCP to create this project in Notion & make it public, set up the trackers, split the real-world and tech tasks, and track them separately. Include all documentation in the notion project. Update the site to add link to the notion project.
+
+### What was done
+
+**Notion Project Structure:**
+
+Hub page: https://app.notion.com/p/378f80653ecc81439060cfffd0d3e48d
+Documentation index: https://app.notion.com/p/378f80653ecc810098facf941931b60a
+
+**Real-World Tasks Database** (ID: 11914e63-bed4-4c6b-900a-5c6bf6e35ca3):
+- 24 tasks populated across Foundation, Pilot, Scale, and Stabilization phases
+- Categories: Partnerships, Operations, Fundraising, Legal, Hiring, Marketing, Community
+- Properties: Status, Category, Phase, Priority, Owner, Notes
+- Views: By Phase (board), By Priority (board), By Status (board)
+
+**Tech Tasks Database** (ID: 6549211f-b6f6-42d9-889e-d2935b71f7ce):
+- 22 tasks populated across MVP, Phase 2, and Phase 2.5b
+- Categories: Landlord Portal, Case Manager Portal, Claims System, Payments, Admin & Ops, Infrastructure, Mobile, HA SaaS, Data Pipeline
+- Properties: Status, Category, Phase, Priority, Effort, Notes
+- Views: By Phase (board), By Priority (board), By Status (board)
+
+**Documentation pages created (10 sub-pages):**
+1. PRD v1.6 — HomeGuarantee Product Requirements
+2. Stakeholder Personas — All 6 (v1.6)
+3. Market Sizing — TAM/SAM/SOM
+4. Competitor Analysis — Competitive Landscape
+5. GTM Plan — Houston to National Expansion
+6. CFTH Partnership Proposal
+7. Works Program Brief — Employment + Renovation Exchange
+8. Pre-Mortem Reports — v1 + v2
+9. Red Team Reports — Business Case + Below-FMR + Prototype-First
+10. Positioning, Value Props & Battlecards
+
+**Site updates:**
+- docs/assets/js/main.js: Added "Notion Project Hub" link in sidebar Downloads section
+- docs/index.html: Added "View Project in Notion" CTA button in hero section
+
+**Key debugging learned:**
+- notion-create-view requires BOTH data_source_id AND database_id (not just one)
+- Valid view types: table, board, list, calendar, timeline, gallery, form, chart, map, dashboard
+- notion-create-pages for non-database pages uses `properties: {title: "..."}` + `content: "..."`
+- VIEW configure string must be single-line: GROUP BY "PropertyName" (no \n separators)
+
+---
+
 ## Entry 1 — June 6, 2026
 
 ### Prompt
